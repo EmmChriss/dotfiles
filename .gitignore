@@ -1,0 +1,32 @@
+# ignore everything
+/*
+
+# include git files
+!.gitignore
+!.gitconfig
+
+# include xorg files
+!.xinitrc
+!.Xresources
+!.Xresources.d
+
+# include configs
+!.config
+.config/*
+!.config/compton.conf
+!.config/mimeapps.list
+!.config/tmux.conf
+!.config/alacritty
+!.config/bspwm
+!.config/fish
+!.config/fontconfig
+!.config/kak
+!.config/kak-lsp
+!.config/lf
+!.config/mpd
+!.config/ncmpcpp
+!.config/polybar
+!.config/zathura
+
+# include scripts
+!.scripts

@@ -1,0 +1,14 @@
+#! /bin/bash
+
+while test -n "$(pgrep -x polybar)"; do 
+	pkill -x polybar
+	sleep 1s
+done
+
+bspc config bottom_padding 20
+bspc config -m eDP1 top_padding 20
+
+for m in $(bspc query -M --names); do
+	MON=$m polybar -r bottom >/dev/null 2>&1 &
+done
+polybar -r status >/dev/null 2>&1 &

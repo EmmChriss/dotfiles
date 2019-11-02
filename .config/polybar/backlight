@@ -1,0 +1,10 @@
+#! /bin/bash
+
+acpi_listen | while :; do
+	echo " $(bl)%"
+	
+	while read -r line; do
+		echo "$line" | grep -Eq 'video/brightness(up|down)' && break
+	done
+	sleep 0.1
+done

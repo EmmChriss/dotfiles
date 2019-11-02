@@ -1,0 +1,17 @@
+#! /bin/bash
+
+# Build dmenu cache
+dmenu_path >/dev/null
+
+# Set cursor
+xsetroot -cursor_name left_ptr
+
+# Set wallpaper
+(sleep 2; xwallpaper --zoom .wall) &
+
+# Restart desktop daemons
+killall monu compton sxhkd
+
+monu &
+compton --config ~/.config/compton.conf &
+sxhkd -c ~/.config/bspwm/sxhkdrc &

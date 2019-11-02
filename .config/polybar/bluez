@@ -1,0 +1,17 @@
+#! /bin/bash
+
+source `dirname $0`/color
+
+# Eventless sleep-loop
+# Couldn't get bluetoothctl to export events to a pipe
+while :; do
+	bluez="$(bluetoothctl -- info)"
+	if test "$bluez" = "Missing device address argument"; then
+		echo "%{F$CL_RED_DK}%{F-}"
+	else
+		name="$(echo "$bluez" | grep 'Name' | awk '{print $2}')"
+		echo "%{F$CL_GREEN_DK}%{F-} [$name]"
+	fi
+	
+	sleep 5
+done

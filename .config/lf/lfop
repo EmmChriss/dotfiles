@@ -1,0 +1,37 @@
+#! /bin/sh
+
+FILE="$1"
+MIME="$(file --mime-type -bL "$FILE")"
+EXT="${FILE#/*/*.}"
+
+# Handle mimetype
+case "$MIME" in
+	image/*)
+		id_cur=1
+		id=
+		files=
+		for f in "$(dirname "$FILE")"/*; do
+			if file -b --mime-type "$f" | grep -q 'image'; then
+				[ "$f" = "$FILE" ] && id=$id_cur
+				id_cur=$((id_cur + 1))
+				files="$(printf "%s\n%s" "$files" "$f")"
+			fi
+		done
+		echo "$files" | sxiv -i -n $id && exit
+		exit
+		;;
+	
+	application/pdf)
+		zathura "$FILE" && exit
+		;;
+esac
+
+# Handle externsion
+case "$EXT" in
+esac
+
+# Usually I'd open text files in the editor, but stdout is not a tty
+# So if we didn't find an app to open the txt file, we should exit
+[ "$(file -bL --mime-encoding "$FILE")" != 'binary' ] && exit
+
+xdg-open "$FILE" &

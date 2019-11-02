@@ -1,0 +1,142 @@
+#
+# Basic
+#
+
+# Reload config
+super + Escape
+	~/.config/bspwm/reload
+
+# Terminal
+super + Return
+	exec $TERMINAL
+
+# Launcher
+super + space
+	drun
+
+# Command launcher 
+super + r
+	eval "$(echo -n | dmenu -p "run" -i -b &)"
+
+# Power
+super + alt + ctrl + q
+	[ "$(printf "No\nYes" | dmenu -p "Shutdown?")" = "Yes" ] && doas systemctl poweroff
+
+super + alt + ctrl + w
+	[ "$(printf "No\nYes" | dmenu -p "Reboot?")" = "Yes" ] && doas systemctl reboot
+
+# Sleep
+super + alt + ctrl + e
+	[ "$(printf "No\nYes" | dmenu -p "Suspend?")" = "Yes" ] && doas systemctl suspend
+
+super + alt + ctrl + s
+	[ "$(printf "No\nYes" | dmenu -p "Hibernate?")" = "Yes" ] && doas systemctl hibernate
+
+# Lock
+super + alt + ctrl + l
+	betterlockscreen --lock
+
+#
+# WM
+#
+
+# Quit
+super + alt + ctrl + Escape
+	bspc quit
+
+# Close/Kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Movement
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# State
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '{I,II,III,IV,V,VI,VII,VIII,IX,X}'
+
+super + alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '{1-9,10}'
+
+# # Cycle monitors
+# super + alt + {shift + ,_}Tab
+# 	bspc {node -m,monitor -f} next
+
+# # Cycle nodes
+# super + {shift + ,_}Tab
+# 	bspc node -f {prev,next}.local
+
+# Cycle monitors
+super + alt + {asciitilde,grave}
+	bspc {node -m,monitor -f} next
+
+# Cycle nodes
+super + {asciitilde,grave}
+	bspc node -f {prev,next}.local
+
+# Cycle desktops
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+super + brace{left,right}
+	bspc node -d {prev,next}.local
+
+# Layout
+super + m
+	bspc desktop -l next
+
+# Preselect
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# Cancel
+super + ctrl + space
+	bspc node -p cancel
+
+# Move
+super + alt + ctrl + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Resize outwards
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Resize inwards
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+#
+# Misc
+#
+
+# Screenshot
+{_,super + }Print
+	[ -d ~/Pictures ] || mkdir ~/Pictures; maim {_,-s} -o ~/Pictures/$(date +"%Y-%m-%d-%H:%M-%N").png
+
+# Volume control
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+# Volume mute toggle
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Monitor brightness
+XF86MonBrightness{Up,Down}
+	bl {+,-}5
+
+# MPD control
+XF86Audio{Play,Next,Prev}
+	mpc -q {toggle,next,prev}
+
+# Defective XF86AudioNext key
+alt + XF86AudioPrev
+	mpc -q next
+
+ctrl + XF86Audio{Next,Prev}
+	mpc -q seek {+,-}5%

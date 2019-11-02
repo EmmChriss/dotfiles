@@ -1,0 +1,12 @@
+#! /bin/bash
+
+pactl subscribe | while :; do
+	[ "$(pulsemixer --get-mute)" = '1' ] && MUTE=' m' || MUTE=''
+	echo " $(pulsemixer --get-volume | tr ' ' "\n" | awk '{ total += $1; count++ } END { print total/count }')%$MUTE"
+	
+	while read -r -t 0; do
+		read -n 256 -r -s
+	done
+	read none
+	sleep 0.05
+done

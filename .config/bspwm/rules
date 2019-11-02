@@ -1,0 +1,19 @@
+#!/bin/sh
+
+wid=$1
+class=$2
+instance=$3
+csq_buf=$4
+
+fwid=$(bspc query -N -n focused.automatic)
+if [ -n "$fwid" ]; then
+	info=$(xwininfo -id $fwid)
+	w=$(echo "$info" | grep 'Width' | awk '{print $2}')
+	h=$(echo "$info" | grep 'Height' | awk '{print $2}')
+	
+	if test "$w" -gt "$h"; then
+		echo "split_dir=west"
+	else
+		echo "split_dir=north"
+	fi
+fi
