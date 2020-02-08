@@ -1,0 +1,10 @@
+#! /bin/sh
+
+[ -d /tmp/kakd ] || mkdir /tmp/kakd
+[ -z $1 ] && echo "Please provide a session name" && exit 1
+[ -e "/tmp/kakoune/$USER/$1" ] && echo "Session name already in use" && exit 1
+
+PID="$(kak -s $1 -d 2>&1 | sed '2q;d' | sed 's/[^0-9]*//g')"
+echo "Starting kakoune daemon on $PID"
+(echo "$PID"; echo "$PWD") > "/tmp/kakd/$1"
+kakc

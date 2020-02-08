@@ -100,7 +100,6 @@ end
 
 # login stuff
 if status is-login
-	set -p PATH '/usr/repo/bin'
 	set -p PATH "$HOME/.cargo/bin"
 	set -p PATH "$HOME/.bin"
 	set -p PATH "$HOME/.bin/desktop"

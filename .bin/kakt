@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [ -z $1 ]; then
+	for s in /tmp/kakd/*; do
+		dir="$(cat $s | sed '2q;d')"
+		[[ "$PWD" == "$dir"* ]] && kill "$(cat $s | head -n 1)" && rm $s && exit 0
+	done
+	echo "Couldn't find session"
+else
+	[ -e /tmp/kakd/$1 ] || echo "No such session" && exit 1
+
+	kill "$(cat /tmp/kakd/$1) | head -n 1"
+	rm /tmp/kakd/$1
+fi
+kak -clear
