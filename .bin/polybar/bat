@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source `dirname $0`/color
+source $HOME/.theme/source
 
 BAT='/sys/class/power_supply/BAT0/'
 acpi_listen | while true; do

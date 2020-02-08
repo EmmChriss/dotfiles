@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source `dirname $0`/color
+source $HOME/.theme/source
 
 # Eventless sleep-loop
 # Couldn't get bluetoothctl to export events to a pipe

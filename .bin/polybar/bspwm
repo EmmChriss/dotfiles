@@ -1,5 +1,7 @@
 #! /bin/bash
 
+source $HOME/.theme/source
+
 bspc subscribe |
 while read -r line; do
 	D="$(bspc query -D -d $MON:focused --names)"

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source `dirname $0`/color
+source $HOME/.theme/source
 
 IFACE=enp4s0
 ip -o -br -4 monitor dev $IFACE | while :; do
