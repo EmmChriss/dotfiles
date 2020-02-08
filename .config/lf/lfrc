@@ -2,7 +2,7 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
-set previewer "~/.config/lf/lfpv"
+set previewer "~/.bin/preview"
 set promptfmt "\033[32;1m%u\033[0m \033[34;1m%w/\033[0m\033[1m%f\033[0m"
 
 ${{
@@ -21,6 +21,9 @@ cmd resize ${{
 }}
 
 map gg
+map g/ cd /
+map gh cd ~
+map gu cd /usr
 map gm cd /mnt
 map gd cd /mnt/data
 map gw cd /mnt/win
@@ -32,7 +35,8 @@ map <a-d> delete
 map i $[ -f "$f" ] && ~/.config/lf/lfpv "$f" | $PAGER
 map e edit
 
-cmd open &[ -n "${1+0}" ] && $OPENER "$1" || $OPENER "$f"
+cmd usage %du -cLh "${f-$fs}" | tail -n 1 | sed 's/total//' 
+cmd open $[ -n "${1+0}" ] && $OPENER "$1" || $OPENER "$f"
 cmd edit $[ -n "${1+0}" ] && $EDITOR "$1" || $EDITOR "$f"
 cmd mkdir %[ -n "${1+0}" ] && mkdir "$1" || echo "Argument needed"
 cmd rename %{{

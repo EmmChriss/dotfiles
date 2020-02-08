@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Set cursor
+xsetroot -cursor_name $THEME_CURSOR
+
+# Set wallpaper
+xwallpaper --zoom ".walls/$THEME_WALL"
+
+# Restart desktop daemons
+killall mond mons picom sxhkd syndaemon dunst
+
+dunst &
+mond &
+mons -a &
+picom --config ~/.config/compton.conf & # also known as compton, not gonna change config name
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+syndaemon &
+
+$HOME/.bin/desktop/reload-polybar

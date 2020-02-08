@@ -1,0 +1,9 @@
+#! /bin/bash
+
+pactl subscribe | grep --line-buffered 'sink' |
+while :; do
+	[ "$(pulsemixer --get-mute)" = '1' ] && MUTE='m' || MUTE=''
+	printf " %s%% %s\n" "$(pulsemixer --get-volume | awk '{print $1}')" "$MUTE"
+	
+	read -r line
+done

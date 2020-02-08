@@ -1,24 +1,33 @@
-## Environment
+# Environment
 
 # Preferences
 set -x EDITOR '/usr/bin/kak'
 set -x VISUAL '/usr/bin/kak'
 set -x PAGER  '/usr/bin/less'
 set -x SHELL  '/usr/bin/fish'
-set -x OPENER "$HOME/.config/lf/lfop"
+set -x OPENER "$HOME/.bin/open"
 
 # Defaults
 set -x LESS       '-RS'
 set -x BAT_THEME  'TwoDark'
 
-## General
+# aliases
 alias dotfiles='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
-alias tmux="tmux -2 -f ~/.config/tmux.conf"
-alias cat="bat -n || cat"
+alias tmux='tmux -2'
+alias ssh='env TERM=xterm-color ssh'
+alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
 
 alias page="eval $PAGER"
 alias sush="doas -s"
 
+# coreutils file-operations in rsync
+# with progress-bar
+# might be beneficial to use pv instead
+# like so: pv 'SRC' > 'TARGET'
+# it just cannot move directories
+alias cpr='rsync -a --info=progress2 --info=name0 --no-i-r --stats'
+
+# lf alias
 function lf -w 'lf'
 	set tmp (mktemp)
 	/usr/bin/lf -last-dir-path=$tmp $argv
@@ -31,11 +40,22 @@ function lf -w 'lf'
 	end
 end
 
-## Bumblebee
+# ssh-agent
+function ssh-agent
+	set -l TMP_SSH (/usr/bin/ssh-agent)
+	set -x SSH_AUTH_SOCK (echo $TMP_SSH | tr ';' "\n" | grep SSH_AUTH_SOCK= | cut -d '=' -f 2)
+	set -x SSH_AGENT_PID (echo $TMP_SSH | tr ';' "\n" | grep SSH_AGENT_PID= | cut -d '=' -f 2)
+	ssh-add > /dev/null
+	fish -c "\
+	trap '/usr/bin/ssh-agent -k > /dev/null' EXIT
+	eval $SHELL"
+end
+
+# bumblebee
 alias bbstat='cat /proc/acpi/bbswitch'
 
 function bbon
-	echo ON > /proc/acpi/bbswitch
+	doas sh -c 'echo ON > /proc/acpi/bbswitch'
 	bbstat
 end
 
@@ -45,17 +65,24 @@ function bboff
 	bbstat
 end
 
-## Fish config
+# fish config
 bind \cf 'lf; commandline -f repaint'
 
 function fish_greeting
-	fortune
-	echo
+	if [ "$FISH_TOP" = no ]
+		set -x FISH_TOP yes
+		fortune -s
+		echo
+	end
 end
 
-function fish_prompt --description "Write out the prompt"
+function fish_prompt
 	set -l color_cwd
 	set -l suffix
+	set -l ssh
+	set -l fail
+	[ $status = 0 ]         || set fail '!'
+	[ -n "$SSH_AGENT_PID" ] && set ssh  '#ssh'
 	switch "$USER"
 		case root toor
 			if set -q fish_color_cwd_root
@@ -68,17 +95,19 @@ function fish_prompt --description "Write out the prompt"
 			set color_cwd $fish_color_cwd
 			set suffix '>'
 	end
-	
-	echo -n -s "$USER" ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
+	echo -n -s $USER (set_color blue) $ssh (set_color normal) ' ' (set_color $color_cwd) (prompt_pwd) (set_color red) $fail (set_color normal) $suffix ' '
 end
 
-## Login stuff
+# login stuff
 if status is-login
 	set -p PATH '/usr/repo/bin'
 	set -p PATH "$HOME/.cargo/bin"
+	set -p PATH "$HOME/.bin"
+	set -p PATH "$HOME/.bin/desktop"
 	
 	set -x LS_COLORS (sh -c 'eval $(dircolors /etc/DIR_COLORS); echo $LS_COLORS')
-	set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 	
 	[ (tty) = "/dev/tty1" ]; and exec startx > /dev/null
+else if [ -z "$FISH_TOP" ]
+	set -x FISH_TOP no
 end

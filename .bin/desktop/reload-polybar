@@ -1,0 +1,16 @@
+#! /bin/sh
+
+mon_pri="$(mons | grep '^[0-9]' | grep '\*' | awk '{print $2}')"
+
+while test -n "$(pgrep -x polybar)"; do 
+	pkill -x polybar
+	sleep 0.5s
+done
+
+bspc query -M --names | xargs -I '{}' sh -c "MON='{}' polybar -r bottom &"
+MON="$mon_pri" polybar -r status &
+
+sleep 1s
+
+bspc config bottom_padding 20
+bspc config -m $mon_pri top_padding 20

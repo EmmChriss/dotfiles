@@ -1,5 +1,3 @@
-#! /bin/sh
-
 CL0=`xgetcolor color0`
 CL1=`xgetcolor color1`
 CL2=`xgetcolor color2`

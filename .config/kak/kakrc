@@ -88,6 +88,9 @@ set global modelinefmt '%opt{lsp_progress} %val{bufname} %val{cursor_line},%val{
 # Set tab length
 set global tabstop 4
 
+# Align cursors with spaces
+set global aligntab false
+
 # Lint on write
 hook global BufWritePost .* %{ eval %sh{
 	if [ -n "$kak_opt_lintcmd" ]; then
@@ -124,5 +127,4 @@ map global normal '<a-#>' ':comment-block<ret>' -docstring 'comment block'
 
 # Set indent char to tab
 set global indentwidth 0
-set global aligntab true
 set global scrolloff 4,4

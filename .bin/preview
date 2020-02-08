@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if echo "$PWD" | grep -q 'sshfs'; then
+	lf -remote "send $id set nopreview"
+	lf -remote "send $id resize"
+fi
+
 FILE="$1"
 HEIGHT="$2"
 
@@ -7,23 +12,18 @@ MIME="$(file -biL "$FILE")"
 MT="$(echo "$MIME" | cut -d ';' -f 1)"
 ME="$(echo "$MIME" | cut -d '=' -f 2)"
 EXT="${FILE#/*/*.}"
-EXT="${EXT#$FILE}"
 
-header() {
-	# Style on
-	printf "\e[7m"
-	if test "$(file -bi "$FILE" | cut -d ';' -f 1)" = 'inode/symlink'; then
-		printf "> %s\n" "$(realpath "$FILE")"
-	fi
+# Style on
+printf "\e[7m"
+if test "$(file -bi "$FILE" | cut -d ';' -f 1)" = 'inode/symlink'; then
+	printf "> %s\n" "$(realpath "$FILE")"
+fi
 
-	# Write header: <path> <mimetype>... and some other info? with color
-	printf "%s\n" "$MIME"
+# Write header: <path> <mimetype>... and some other info? with color
+printf "%s\n" "$MIME"
 
-	# Style off
-	printf "\e[0m"
-}
-
-header
+# Style off
+printf "\e[0m"
 
 # Handle mimetype
 case "$MT" in

@@ -11,8 +11,8 @@
 !.Xresources.d
 
 # include configs
-!.config
-.config/*
+!.config  # include dir
+.config/* # but not the whole subtree
 !.config/compton.conf
 !.config/mimeapps.list
 !.config/tmux.conf
@@ -29,4 +29,4 @@
 !.config/zathura
 
 # include scripts
-!.scripts
+!.bin

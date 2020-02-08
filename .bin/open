@@ -4,6 +4,10 @@ FILE="$1"
 MIME="$(file --mime-type -bL "$FILE")"
 EXT="${FILE#/*/*.}"
 
+orphan() {
+	{ "$@" & } &
+}
+
 # Handle mimetype
 case "$MIME" in
 	image/*)
@@ -17,21 +21,23 @@ case "$MIME" in
 				files="$(printf "%s\n%s" "$files" "$f")"
 			fi
 		done
-		echo "$files" | sxiv -i -n $id && exit
-		exit
-		;;
+		echo "$files" | orphan sxiv -a -i -n $id
+		exit ;;
 	
 	application/pdf)
-		zathura "$FILE" && exit
-		;;
+		orphan zathura "$FILE"
+		exit ;;
 esac
 
 # Handle externsion
 case "$EXT" in
 esac
 
-# Usually I'd open text files in the editor, but stdout is not a tty
-# So if we didn't find an app to open the txt file, we should exit
-[ "$(file -bL --mime-encoding "$FILE")" != 'binary' ] && exit
+# Open every txt file in EDITOR
+# I might need to open a txt file in another app, but I don't right now
+if [ "$(file -bL --mime-encoding "$FILE")" != 'binary' ]; then
+	$EDITOR "$FILE"
+	exit
+fi
 
-xdg-open "$FILE" &
+orphan xdg-open "${FILE}"

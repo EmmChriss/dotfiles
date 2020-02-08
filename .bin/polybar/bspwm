@@ -1,8 +1,7 @@
 #! /bin/bash
 
-source `dirname $0`/color
-
-bspc subscribe | while read line; do
+bspc subscribe |
+while read -r line; do
 	D="$(bspc query -D -d $MON:focused --names)"
 	echo -n "%{u$CL_WHITE_LT}%{-u}"
 	for d in $(bspc query -D -m $MON --names); do
@@ -18,10 +17,17 @@ bspc subscribe | while read line; do
 	done
 	
 	line="$(echo "$line" | grep -Eo "$MON(:[^mM][^:]*)*")"
-	lo="$(echo "$line" | grep -Eo 'L[TM]')"
-	st="$(echo "$line" | grep -Eo 'T[TPF=@]')"
-	if [ "$(bspc query -N -d focused | wc -l)" -gt 0 ]; then
-		printf " %s%s" ${lo:1:1} ${st:1:1}
+	nodes="$(bspc query -N -d $MON:focused -n .leaf)"
+	node_c="$(echo "$nodes" | wc -l)"
+	if [ "$node_c" -ge 1 ]; then
+		lo="$(echo "$line" | grep -Eo 'L[TM]')"
+		st="$(echo "$line" | grep -Eo 'T[TPF=@]')"
+		printf " %s%s" "${lo:1:1}" "${st:1:1}"
+	fi
+	if [ "$node_c" -ge 2 ]; then
+		node_id="$(bspc query -N -d $MON:focused -n .active)"
+		node_idx="$(echo "$nodes" | awk -v node_id="$node_id" '$1==node_id { print NR }')"
+		printf "[%s/%s]" "$node_idx" "$node_c"
 	fi
 	echo "%{u-}"
 done

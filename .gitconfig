@@ -3,3 +3,11 @@
 	email = emmchris@protonmail.com
 [core]
 	editor = kak
+[alias]
+	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+[filter "tabspace"]
+	smudge = unexpand --tabs=4 --first-only
+	clean = expand --tabs=4 --initial
+[filter "tabspace2"]
+	smudge = unexpand --tabs=4 --first-only
+	clean = expand --tabs=4 --initial

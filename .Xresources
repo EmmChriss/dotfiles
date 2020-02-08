@@ -1,17 +1,7 @@
-!!!!!!!!!!!!!!!!!!!
-!!! Colorscheme !!!
-!!!!!!!!!!!!!!!!!!!
-#include ".Xresources.d/nord"
-
-
-!!!!!!!!!!!!!!!!!!!!!!
-!!! Visual entries !!!
-!!!!!!!!!!!!!!!!!!!!!!
+!!! Visual entries
 *font:                  xos4 Terminus
 
-!!!!!!!!!!!
-!!! Xft !!!
-!!!!!!!!!!!
+!!! Xft
 Xft.dpi:                96
 Xft.antialias:          false
 Xft.rgba:               rgb

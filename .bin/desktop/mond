@@ -1,0 +1,10 @@
+#!/bin/sh
+# runs monitor update script on udev drm change event
+
+UDEV_CARD='card0'
+udevadm monitor | grep --line-buffered 'KERNEL' | grep --line-buffered "$UDEV_CARD" |
+while
+	sleep 1
+	$HOME/.bin/desktop/monu
+do read -r _
+done

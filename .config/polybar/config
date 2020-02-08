@@ -40,8 +40,8 @@ inherit = bar/base
 # border-top-size = 1
 # border-top-color = ${colors.black_lt}
 
-modules-left   = bspwm
-modules-center = title
+modules-left   = bspwm title
+modules-center = 
 modules-right  = xkb clock
 
 [bar/status]
@@ -49,7 +49,6 @@ inherit = bar/base
 # border-bottom-size = 1
 # border-bottom-color = ${colors.black_lt}
 bottom = false
-monitor = eDP1
 override-redirect = true
 
 modules-left = mpd
@@ -58,7 +57,7 @@ modules-right = wifi eth bluez vol backlight bat
 
 [module/bspwm]
 type = custom/script
-exec = /home/morga/.config/polybar/bspwm
+exec = /home/morga/.bin/polybar/bspwm
 tail = true
 
 [module/title]
@@ -71,12 +70,12 @@ format = <label-layout>
 
 [module/clock]
 type = custom/script
-exec = /home/morga/.config/polybar/date
+exec = /home/morga/.bin/polybar/date
 tail = true
 
 [module/mpd]
 type = custom/script
-exec = /home/morga/.config/polybar/mpd
+exec = /home/morga/.bin/polybar/mpd
 tail = true
 
 [module/load]
@@ -95,30 +94,30 @@ format-prefix = " "
 
 [module/wifi]
 type = custom/script
-exec = /home/morga/.config/polybar/wifi
+exec = /home/morga/.bin/polybar/wifi
 tail = true
 
 [module/eth]
 type = custom/script
-exec = /home/morga/.config/polybar/eth
+exec = /home/morga/.bin/polybar/eth
 tail = true
 
 [module/bluez]
 type = custom/script
-exec = /home/morga/.config/polybar/bluez
+exec = /home/morga/.bin/polybar/bluez
 tail = true
 
 [module/vol]
 type = custom/script
-exec = /home/morga/.config/polybar/vol
+exec = /home/morga/.bin/polybar/vol
 tail = true
 
 [module/backlight]
 type = custom/script
-exec = /home/morga/.config/polybar/backlight
+exec = /home/morga/.bin/polybar/backlight
 tail = true
 
 [module/bat]
 type = custom/script
-exec = /home/morga/.config/polybar/bat
+exec = /home/morga/.bin/polybar/bat
 tail = true
