@@ -4,6 +4,10 @@ FILE="$1"
 MIME="$(file --mime-type -bL "$FILE")"
 EXT="${FILE#/*/*.}"
 
+if [ -t 0 ]; then
+	exec >/dev/null 2>&1
+fi
+
 orphan() {
 	{ "$@" & } &
 }

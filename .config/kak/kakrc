@@ -62,10 +62,22 @@ plug "TeddyDD/kakoune-lf" config %{
 	set global lf_follow true
 	set global lf_openables 'text/.*' 'application/json' 'inode/x-empty'
 }
+plug "occivink/kakoune-sudo-write" config %{
+	def sudo-write-quit -docstring 'Write using sudo then quit' %{
+		sudo-write
+		quit
+	}
+	alias global sw  sudo-write
+	alias global swq sudo-write-quit
+}
 
 # Fish-like <control-direction> word-selection
 map global insert <c-left> '<a-;>b' 
 map global insert <c-right> '<a-;>w'
+
+# Same in normal mode
+map global normal <c-left> 'b' 
+map global normal <c-right> 'w'
 
 # Number lines
 addhl global/ number-lines -hlcursor

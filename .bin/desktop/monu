@@ -4,7 +4,7 @@
 DT_ALL="$DT_PRI $DT_SEC"
 
 mons=$(mons)
-mon_mode="$(echo "$mons" | grep 'Mode: '     | awk '{print $2}')"
+mon_mode="$(echo "$mons" | grep 'Mode: ' | awk '{print $2}')"
 mon_pri="$(echo "$mons"  | grep '^[0-9]' | grep    '\*' | awk '{print $2}')"
 mon_sec="$(echo "$mons"  | grep '^[0-9]' | grep -v '\*' | awk '{print $2}')"
 
@@ -18,7 +18,8 @@ if [ "$mon_mode" = 'extend' ]; then
 	bspc monitor $mon_sec -o $DT_SEC
 else
 	# add 'Desktop' to SECONDARY
-	if bspc query -M -m $mon_sec >/dev/null; then
+	[ -z "$mon_sec" ] && mon_sec="$(bspc query -M --names | grep -v $mon_pri)"
+	if [ -n "$mon_sec" ] && bspc query -M -m $mon_sec >/dev/null; then
 		bspc query -D -d Desktop >/dev/null || bspc monitor $mon_sec -a Desktop
 		bspc desktop Desktop -m $mon_sec
 	fi

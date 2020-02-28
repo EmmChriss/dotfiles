@@ -104,7 +104,7 @@ if status is-login
 	set -p PATH "$HOME/.bin"
 	set -p PATH "$HOME/.bin/desktop"
 	
-	set -x LS_COLORS (sh -c 'eval $(dircolors /etc/DIR_COLORS); echo $LS_COLORS')
+	set -x LS_COLORS (sh -c 'eval $(dircolors $HOME/.config/DIR_COLORS); echo $LS_COLORS')
 	
 	[ (tty) = "/dev/tty1" ]; and exec startx > /dev/null
 else if [ -z "$FISH_TOP" ]
