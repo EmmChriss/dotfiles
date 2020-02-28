@@ -1,0 +1,16 @@
+# this file handles themes
+
+# defaults and globals
+THEME_CURSOR=left_ptr
+THEME_FONT='xos4 Terminus'
+THEME_WALL=samuraihat.jpg
+
+# source current theme
+theme_dir="$HOME/.theme/$THEME"
+pushd $theme_dir >/dev/null
+. "$theme_dir/source"
+popd >/dev/null
+
+# overrides
+
+export THEME_CURSOR THEME_FONT THEME_WALL

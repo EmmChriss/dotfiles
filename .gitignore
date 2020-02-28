@@ -9,6 +9,7 @@
 !.xinitrc
 !.Xresources
 !.Xresources.d
+!.theme
 
 # include configs
 !.config  # include dir
