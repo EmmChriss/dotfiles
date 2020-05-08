@@ -32,7 +32,7 @@ map <a-r> push :rename<space>
 map <a-R> bulkrename
 map <a-d> delete
 
-map i $[ -f "$f" ] && ~/.config/lf/lfpv "$f" | $PAGER
+map i $[ -f "$f" ] && ~/.bin/preview "$f" | $PAGER
 map e edit
 
 cmd usage %du -cLh "${f-$fs}" | tail -n 1 | sed 's/total//' 

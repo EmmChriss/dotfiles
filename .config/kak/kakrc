@@ -3,7 +3,10 @@ source %sh{ echo "$HOME/.cache/kak-plugins/plug.kak/rc/plug.kak" }
 set global plug_install_dir %sh{ echo "$HOME/.cache/kak-plugins" }
 plug "andreyorst/plug.kak" noload
 plug 'delapouite/kakoune-palette'
-plug "EmmChriss/nord-kakoune"
+plug "lenormf/kakoune-extra" load %{
+	git.kak
+	pkgbuild.kak
+}
 plug "Delapouite/kakoune-buffers" config %{
 	hook global WinDisplay .* info-buffers
 	map global user b ':enter-user-mode buffers<ret>' -docstring 'buffers'
@@ -14,6 +17,9 @@ plug "Delapouite/kakoune-buffers" config %{
 }
 plug "occivink/kakoune-gdb" config %{
 	set global gdb_location_symbol ">"
+	hook global WinSetOption filetype=rust %{
+		set buffer gdb_program "rust-gdb"
+	}
 }
 plug "ul/kak-lsp" noload do %{
 	cargo build --release --locked
@@ -21,7 +27,7 @@ plug "ul/kak-lsp" noload do %{
 } config %{
 	map global user l -docstring 'load lsp' ':lsp-load<ret>'
 	
-	# Have to define it here, so that the modeline sees it
+	# have to declare it here, so that the modeline sees it
 	decl -hidden str lsp_progress ""
 	def lsp-load -hidden %{
 		eval %sh{ kak-lsp --kakoune -s $kak_session }
@@ -43,8 +49,7 @@ plug "ul/kak-lsp" noload do %{
 		
 		hook global KakEnd .* lsp-exit
 		
-		# LSP progress
-		# Shamelessly copied from gh/ul/kak-lsp/wiki/Handling-progress-notifications
+		# copied from gh/ul/kak-lsp/wiki/Handling-progress-notifications
 		def -hidden -params 4 -override lsp-handle-progress %{
 			set global lsp_progress %sh{
 				if test -n "$4"; then
@@ -71,25 +76,27 @@ plug "occivink/kakoune-sudo-write" config %{
 	alias global swq sudo-write-quit
 }
 
-# Fish-like <control-direction> word-selection
+source %sh{ echo "$kak_config/colorscheme.kak" }
+
+# shell-like <control-direction> word-selection
 map global insert <c-left> '<a-;>b' 
 map global insert <c-right> '<a-;>w'
 
-# Same in normal mode
+# same in normal mode
 map global normal <c-left> 'b' 
 map global normal <c-right> 'w'
 
-# Number lines
-addhl global/ number-lines -hlcursor
+# number lines
+addhl global/ number-lines -hlcursor -min-digits 3
 
-# Highlight tabs
-addhl global/ show-whitespaces -lf ' ' -spc ' ' -nbsp ' ' -tab '⡂'
+# highlight tabs
+addhl global/ show-whitespaces -lf ' ' -spc ' ' -nbsp ' ' -tab '⠅'
 addhl global/ show-matching
 
-# Highlight TODO, NOTE, and BUG keywords
+# highlight TODO, NOTE, and BUG keywords
 # Not sure how to restrict the highlighting to a comment context,
 #   but I don't tend to use uppercase NOTE for variable names anyway
-addhl global/ regex \b(TODO|NOTE|BUG)\b 0:default+rb
+addhl global/ regex \b(TODO|NOTE|BUG|ERROR)\b 0:default+rb
 
 # Bye-bye clippy
 set global ui_options ncurses_assistant=off
@@ -103,12 +110,18 @@ set global tabstop 4
 # Align cursors with spaces
 set global aligntab false
 
+# Remove *-trim-indent hooks
+hook global WinSetOption filetype=.* %{
+	remove-hooks window \w+-trim-indent
+}
+
 # Lint on write
 hook global BufWritePost .* %{ eval %sh{
 	if [ -n "$kak_opt_lintcmd" ]; then
 		echo 'lint'
 	fi
 }}
+
 
 # Shell linting
 hook global WinSetOption filetype=(bash|sh|dash) %{
@@ -124,14 +137,6 @@ hook global NormalKey y %{ nop %sh{
 # Paste from clipboard
 map global normal P '!xsel -ob<ret>'
 map global normal p '<a-!>xsel -ob<ret>'
-
-# Also paste form primary
-map global normal <c-p> '!xsel -op<ret>'
-map global normal <c-P> '<a-!>xsel -op<ret>'
-
-# and secondary buffers
-map global normal <a-p> '!xsel -os<ret>'
-map global normal <a-P> '<a-!>xsel -os<ret>'
 
 # Comment and uncomment
 map global normal '#' ':comment-line<ret>' -docstring 'comment line'

@@ -17,3 +17,9 @@ filetypes = ["sh"]
 roots = [".git", ".hg"]
 command = "bash-language-server"
 args = ["start"]
+
+[language.python]
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+command = "pyls"
+offset_encoding = "utf-8"

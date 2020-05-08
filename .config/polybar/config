@@ -15,30 +15,29 @@ cyan_dk=${xrdb:color6}
 cyan_lt=${xrdb:color14}
 white_dk=${xrdb:color7}
 white_lt=${xrdb:color15}
-background_lt=${xrdb:background}
-# background=#15171bcf
-background=#40000000 
+background=#10000000
 foreground=${xrdb:foreground}
 
 [bar/base]
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = true
-height = 20
+height = 16
+border-size = 2
+border-color = ${colors.background}
 padding = 1
+separator = " | "
 line-size = 1
 module-margin = 1
 monitor = ${env:MON}
-font-0 = xos4 Terminus:size=14;2
-font-1 = Font Awesome 5 Free Solid:size=10;2
-font-2 = Font Awesome 5 Brands Regular:size=12;2
+font-0 = Font Awesome 5 Free Solid:size=10;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = xos4 Terminus:size=14;2
 wm-restack = bspwm
-separator = " || "
+fixed-center = true
 
 [bar/bottom]
 inherit = bar/base
-# border-top-size = 1
-# border-top-color = ${colors.black_lt}
 
 modules-left   = bspwm title
 modules-center = 
@@ -46,8 +45,6 @@ modules-right  = xkb clock
 
 [bar/status]
 inherit = bar/base
-# border-bottom-size = 1
-# border-bottom-color = ${colors.black_lt}
 bottom = false
 override-redirect = true
 
@@ -82,14 +79,12 @@ tail = true
 type = custom/script
 exec = cat /proc/loadavg | awk '{print $1}'
 interval = 1
-
 format-prefix = " "
 
 [module/mem]
 type = custom/script
 exec = free -h | grep 'Mem' | awk '{print $7}'
 interval = 1
-
 format-prefix = " "
 
 [module/wifi]

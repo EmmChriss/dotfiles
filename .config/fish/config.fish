@@ -12,20 +12,19 @@ set -x LESS       '-RS'
 set -x BAT_THEME  'TwoDark'
 
 # aliases
-alias dotfiles='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
+alias dots='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
 alias tmux='tmux -2'
 alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
 
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+alias gmv='git mv'
+alias grm='git rm'
+
 alias page="eval $PAGER"
 alias sush="doas -s"
-
-# coreutils file-operations in rsync
-# with progress-bar
-# might be beneficial to use pv instead
-# like so: pv 'SRC' > 'TARGET'
-# it just cannot move directories
-alias cpr='rsync -a --info=progress2 --info=name0 --no-i-r --stats'
 
 # lf alias
 function lf -w 'lf'
@@ -51,23 +50,9 @@ function ssh-agent
 	eval $SHELL"
 end
 
-# bumblebee
-alias bbstat='cat /proc/acpi/bbswitch'
-
-function bbon
-	doas sh -c 'echo ON > /proc/acpi/bbswitch'
-	bbstat
-end
-
-function bboff
-	doas modprobe -r --remove-dependencies nvidia
-	doas sh -c 'echo OFF > /proc/acpi/bbswitch'
-	bbstat
-end
-
-# fish config
 bind \cf 'lf; commandline -f repaint'
 
+# fish config
 function fish_greeting
 	if [ "$FISH_TOP" = no ]
 		set -x FISH_TOP yes
@@ -84,7 +69,7 @@ function fish_prompt
 	[ $status = 0 ]         || set fail '!'
 	[ -n "$SSH_AGENT_PID" ] && set ssh  '#ssh'
 	switch "$USER"
-		case root toor
+		case root
 			if set -q fish_color_cwd_root
 				set color_cwd $fish_color_cwd_root
 			else
@@ -100,7 +85,9 @@ end
 
 # login stuff
 if status is-login
+	set -p PATH "$HOME/.local/bin"
 	set -p PATH "$HOME/.cargo/bin"
+	set -p PATH $HOME/.gem/ruby/*/bin
 	set -p PATH "$HOME/.bin"
 	set -p PATH "$HOME/.bin/desktop"
 	
