@@ -1,0 +1,234 @@
+### this file contains a list of all installed packages and their reason
+
+# system pkgs
+acpid
+intel-ucode
+linux
+linux-firmware
+linux-headers
+tlp
+usbutils
+tzupdate
+
+# daemons
+mpd
+transmission-cli
+redshift
+
+# utilities
+acpi
+aria2
+aspell
+entr
+
+# archives
+atool
+unrar
+unzip
+zip
+p7zip
+
+# dev tools
+cmake
+diffutils
+docker
+gdb
+gnu-netcat
+heroku-cli
+hugo
+jdk-openjdk
+valgrind
+git
+tig
+strace
+openssh
+perf
+postman-bin
+
+# langs
+php
+go
+perl
+python
+python-pylint
+python-rope
+python-virtualenv
+nodejs
+npm # NodeJS package manager
+ruby
+rustup # Rust version manager
+jre8
+
+# lang extras
+python-pip # Python package manager
+shellcheck # (ba)sh linter
+composer   # PHP package manager
+php-sqlite
+
+# term cmds
+fortune-mod
+highlight
+man-pages
+mlocate
+neofetch
+jq
+pv
+pmount
+socat
+wget
+youtube-dl
+traceroute
+rsync
+speedtest-cli
+tldr
+time
+fzf
+upower
+
+# term apps
+cmatrix
+bat
+elinks
+fish
+htop
+iftop
+iotop
+powertop
+less
+lf
+man-db
+mosh
+ncmpcpp
+newsboat
+kakoune
+tmux
+tremc
+vi
+irssi
+pulsemixer
+mpc
+
+# xorg and graphics
+xf86-input-synaptics
+#xf86-video-intel
+bumblebee
+bbswitch
+xorg-server
+#xorg-xbacklight # replaced by acpilight
+acpilight
+xorg-xev
+xorg-xinit
+xorg-xinput
+xorg-xprop
+xorg-xset
+xorg-xsetroot
+xorg-xwininfo
+xorg-xfd
+xorg-xlsfonts
+xsel
+xwallpaper
+mesa-vdpau
+nvidia
+opencl-nvidia
+libva-intel-driver
+primus
+
+# desktop
+alacritty
+aseprite-skia-bin # precompiled skia lib
+betterlockscreen
+bspwm
+discord
+dmenu
+dunst
+firefox
+gimp
+sxhkd
+vlc
+zathura
+zathura-pdf-mupdf
+libreoffice-still
+maim
+mons
+peek
+wmctrl
+xdotool
+numlockx
+picom
+polybar
+pulseaudio
+pulseaudio-bluetooth
+rofi
+sxiv
+zoom
+flashplayer-standalone
+
+# fonts
+noto-fonts
+nerd-fonts-terminus
+terminus-font
+ttf-font-awesome
+siji-git
+
+# cracking
+aircrack-ng
+
+# android
+#android-emulator
+#android-sdk
+#android-sdk-platform-tools
+#android-studio
+#android-udev
+
+# markup
+asciidoctor
+
+# calculation
+bc
+
+# bluetooth
+bluez-tools
+bluez-utils
+
+# fs drivers
+dosfstools
+e2fsprogs
+ntfs-3g
+lvm2
+xfsprogs
+sshfs
+sysfsutils
+
+# pacman utils
+pacman-contrib
+downgrade
+yay
+
+# network
+iw
+inetutils
+net-tools
+networkmanager
+wireless_tools
+wpa_supplicant
+
+# mandatory base pkg
+base
+
+# base-devel group
+autoconf
+automake
+binutils
+bison
+fakeroot
+flex
+gcc
+groff
+libtool
+m4
+make
+patch
+pkgconf
+sudo
+texinfo
+which

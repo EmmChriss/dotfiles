@@ -5,13 +5,19 @@
 !.gitignore
 !.gitconfig
 
+# other files
+!.todo.md
+!.paclist
+
 # include xorg files
 !.xinitrc
 !.Xresources
-!.Xresources.d
 !.theme
+!.walls
+!.newsboat/urls
 
 # include configs
+!.weechat
 !.config  # include dir
 .config/* # but not the whole subtree
 !.config/compton.conf

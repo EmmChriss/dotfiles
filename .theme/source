@@ -3,7 +3,8 @@
 # defaults and globals
 THEME_CURSOR=left_ptr
 THEME_FONT='xos4 Terminus'
-THEME_WALL=samuraihat.jpg
+# THEME_WALL=samuraihat.jpg
+THEME_WALL=samurai.jpg
 
 # source current theme
 theme_dir="$HOME/.theme/$THEME"
