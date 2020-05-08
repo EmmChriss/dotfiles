@@ -1,9 +1,13 @@
 #! /bin/bash
 
+ICON_UP=
+ICON_DOWN=
+ICON_OFF=
+ICON_MUTE=
 pactl subscribe | grep --line-buffered 'sink' |
 while :; do
-	[ "$(pulsemixer --get-mute)" = '1' ] && MUTE='m' || MUTE=''
-	printf " %s%% %s\n" "$(pulsemixer --get-volume | awk '{print $1}')" "$MUTE"
+	[ "$(pulsemixer --get-mute)" = '1' ] && printf "$ICON_MUTE" || printf "$ICON_UP"
+	printf " %s%%\n" "$(pulsemixer --get-volume | awk '{print $1}')"
 	
 	read -r line
 done

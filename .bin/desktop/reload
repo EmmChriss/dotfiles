@@ -1,5 +1,10 @@
 #!/bin/sh
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Reload theme
+. $HOME/.theme/source
+
 # Set cursor
 xsetroot -cursor_name $THEME_CURSOR
 
@@ -7,13 +12,16 @@ xsetroot -cursor_name $THEME_CURSOR
 xwallpaper --zoom ".walls/$THEME_WALL"
 
 # Restart desktop daemons
-killall mond mons picom sxhkd syndaemon dunst
+killall mond mons picom sxhkd syndaemon redshift
 
-dunst &
+redshift &
 mond &
 mons -a &
-picom --config ~/.config/compton.conf & # also known as compton, not gonna change config name
+picom --config ~/.config/compton.conf &
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 syndaemon &
+
+synclient TouchpadOff=0
+synclient PalmDetect=1
 
 $HOME/.bin/desktop/reload-polybar

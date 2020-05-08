@@ -3,6 +3,7 @@
 source $HOME/.theme/source
 
 IFACE=enp4s0
+ICON=
 ip -o -br -4 monitor dev $IFACE | while :; do
 	unset addr
 	ip="$(ip addr show dev enp4s0)"
@@ -12,7 +13,7 @@ ip -o -br -4 monitor dev $IFACE | while :; do
 	else
 		cl=$CL_RED_DK
 	fi
-	echo "%{A2:printf $addr | xsel -ib:}%{F$cl}%{F-}%{A}"
+	echo "%{A2:printf $addr | xsel -ib:}%{F$cl}$ICON%{F-}%{A}"
 	
 	sleep 1s
 	read -n 512 -t 9 line

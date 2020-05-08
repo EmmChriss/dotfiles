@@ -3,9 +3,10 @@
 source $HOME/.theme/source
 
 IFACE=wlp3s0
+ICON=
 ip -o -br -4 monitor dev $IFACE | while :; do
 	if iw dev | grep -q ${IFACE}mon; then
-		echo "%{F$CL_YELLOW_DK}%{F-} [${IFACE}mon]"
+		echo "%{F$CL_YELLOW_DK}${ICON}%{F-} [${IFACE}mon]"
 	elif test "$(iw dev $IFACE link)" != 'Not connected.'; then
 		iw=`iw dev $IFACE link`
 		
@@ -22,9 +23,9 @@ ip -o -br -4 monitor dev $IFACE | while :; do
 		
 		addr="$(ip addr show dev $IFACE | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
 		
-		echo "%{A2:printf $addr | xsel -ib:}%{F$CL_GREEN_DK}%{F-}%{A} [$essid, %{F$sig_cl}$sig_perc%{F-}]"
+		echo "%{A2:printf $addr | xsel -ib:}%{F$CL_GREEN_DK}${ICON}%{F-}%{A} [$essid, %{F$sig_cl}$sig_perc%{F-}]"
 	else
-		echo "%{F$CL_RED_DK}%{F-}"
+		echo "%{F$CL_RED_DK}${ICON}%{F-}"
 	fi
 	
 	sleep 1

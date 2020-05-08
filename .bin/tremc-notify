@@ -2,7 +2,6 @@
 
 cd /tmp
 hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)" | tr '[:upper:]' '[:lower:]')
-echo "$hash.torrent"
 trap "rm '$hash.torrent'" EXIT
 aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
 title="$(transmission-show "$hash.torrent" | head -n 1 | cut -d ' ' -f 2-)"

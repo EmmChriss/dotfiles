@@ -5,8 +5,8 @@ DT_ALL="$DT_PRI $DT_SEC"
 
 mons=$(mons)
 mon_mode="$(echo "$mons" | grep 'Mode: ' | awk '{print $2}')"
-mon_pri="$(echo "$mons"  | grep '^[0-9]' | grep    '\*' | awk '{print $2}')"
-mon_sec="$(echo "$mons"  | grep '^[0-9]' | grep -v '\*' | awk '{print $2}')"
+mon_pri="$(echo "$mons"  | grep '[0-9]:' | grep    '\*' | awk '{print $2}')"
+mon_sec="$(echo "$mons"  | grep '[0-9]:' | grep -v '\*' | awk '{print $2}')"
 
 if [ "$mon_mode" = 'extend' ]; then
 	# two monitors mode

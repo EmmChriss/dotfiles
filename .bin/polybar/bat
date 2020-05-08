@@ -3,7 +3,8 @@
 source $HOME/.theme/source
 
 BAT='/sys/class/power_supply/BAT0/'
-acpi_listen | while true; do
+ICON=
+acpi_listen | grep --line-buffered 'ac_adapter' | while true; do
 	unset PERC_COLOR
 	
 	PERC=`cat $BAT/capacity`
@@ -21,7 +22,7 @@ acpi_listen | while true; do
 			;;
 		*)  STAT= ;;
 	esac
-	echo " $STAT%{F$PERC_COLOR}$PERC%%{F-}"
+	echo "$ICON $STAT%{F$PERC_COLOR}$PERC%%{F-}"
 	
 	read -t 8 unused
 	sleep 2
