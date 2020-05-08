@@ -1,0 +1,133 @@
+2020-02-29 11:05:24	--	irc: connecting to server irc.esper.net/6667...
+2020-02-29 11:05:24	--	irc: connected to irc.esper.net/6667 (51.255.119.242)
+2020-02-29 11:05:24	--	anarchy.esper.net: *** Looking up your hostname...
+2020-02-29 11:05:24	--	anarchy.esper.net: *** Checking Ident
+2020-02-29 11:05:24	--	anarchy.esper.net: *** Couldn't look up your hostname
+2020-02-29 11:05:29	--	anarchy.esper.net: *** No Ident response
+2020-02-29 11:05:29	--	Welcome to the EsperNet Internet Relay Chat Network morga
+2020-02-29 11:05:29	--	Your host is anarchy.esper.net[51.255.119.242/6667], running version charybdis-3.5.3
+2020-02-29 11:05:29	--	This server was created Tue Aug 14 2018 at 10:55:26 CEST
+2020-02-29 11:05:29	--	anarchy.esper.net charybdis-3.5.3 DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2020-02-29 11:05:29	--	CPRIVMSG CNOTICE WHOX ETRACE MONITOR=100 KNOCK FNC CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 :are supported by this server
+2020-02-29 11:05:29	--	PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=24 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+2020-02-29 11:05:29	--	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2020-02-29 11:05:29	--	There are 8 users and 2854 invisible on 12 servers
+2020-02-29 11:05:29	--	27 :IRC Operators online
+2020-02-29 11:05:29	--	2724 :channels formed
+2020-02-29 11:05:29	--	I have 517 clients and 1 servers
+2020-02-29 11:05:29	--	517 1414 :Current local users 517, max 1414
+2020-02-29 11:05:29	--	2862 4271 :Current global users 2862, max 4271
+2020-02-29 11:05:29	--	Highest connection count: 1415 (1414 clients) (275639 connections received)
+2020-02-29 11:05:29	--	- anarchy.esper.net Message of the Day - 
+2020-02-29 11:05:29	--	-  (  ___  )( (    /|(  ___  )(  ____ )(  ____ \|\     /||\     /|
+2020-02-29 11:05:29	--	-  | (   ) ||  \  ( || (   ) || (    )|| (    \/| )   ( |( \   / )
+2020-02-29 11:05:29	--	-  | (___) ||   \ | || (___) || (____)|| |      | (___) | \ (_) /
+2020-02-29 11:05:29	--	-  |  ___  || (\ \) ||  ___  ||     __)| |      |  ___  |  \   /
+2020-02-29 11:05:29	--	-  | (   ) || | \   || (   ) || (\ (   | |      | (   ) |   ) (
+2020-02-29 11:05:29	--	-  | )   ( || )  \  || )   ( || ) \ \__| (____/\| )   ( |   | |
+2020-02-29 11:05:29	--	-  |/     \||/    )_)|/     \||/   \__/(_______/|/     \|   \_/
+2020-02-29 11:05:29	--	-  
+2020-02-29 11:05:29	--	-                     anarchy.esper.net
+2020-02-29 11:05:29	--	-                     
+2020-02-29 11:05:29	--	-       Location: Gravelines, France
+2020-02-29 11:05:29	--	-       Ports (IPv4/IPv6): 5555, 6666 .. 6669, 6697 (TLS), 7000
+2020-02-29 11:05:29	--	-       
+2020-02-29 11:05:29	--	-       Ringleader (Administrators): RyanKnack (ryanknack@esper.net)
+2020-02-29 11:05:29	--	-                                    Steve_Restless (Steve_Restless@esper.net)
+2020-02-29 11:05:29	--	-       
+2020-02-29 11:05:29	--	-       Revolutionaries (Operators): nasonfish (nasonfish@esper.net)
+2020-02-29 11:05:29	--	-                                    phroa (phroa@esper.net)
+2020-02-29 11:05:29	--	-  
+2020-02-29 11:05:29	--	-       Anarchy has been revolutionizing EsperNet since August 8th, 2014! 
+2020-02-29 11:05:29	--	-  
+2020-02-29 11:05:29	--	-                 __.--.____________.--.__
+2020-02-29 11:05:29	--	-                (       _.------._       ).
+2020-02-29 11:05:29	--	-                 '._.--'    ||    '--._.'  )
+2020-02-29 11:05:29	--	-                  | |================| || (
+2020-02-29 11:05:29	--	-                  | ||               | ||  )
+2020-02-29 11:05:29	--	-                  | ||              _| || (
+2020-02-29 11:05:29	--	-                  | ||          _.-' | ||  )
+2020-02-29 11:05:29	--	-                  | ||      _.-'     | || (
+2020-02-29 11:05:29	--	-                  | ||  _.-'         | ||  )
+2020-02-29 11:05:29	--	-                  | |.-'             | || (
+2020-02-29 11:05:29	--	-                  | ||               | ||  )
+2020-02-29 11:05:29	--	-                  | ||               | || (
+2020-02-29 11:05:29	--	-                  | ||               | ||  )
+2020-02-29 11:05:29	--	-                  | ||               | || (
+2020-02-29 11:05:29	--	-                  | ||               | ||  )
+2020-02-29 11:05:29	--	-                  | ||               | || (
+2020-02-29 11:05:29	--	-                  | .---.            | ||  )
+2020-02-29 11:05:29	--	-                  | |   |            | || (
+2020-02-29 11:05:29	--	-                  | |   |            | ||  )
+2020-02-29 11:05:29	--	-                  | |  .'            | || (
+2020-02-29 11:05:29	--	-                  | | '              | ||  )
+2020-02-29 11:05:29	--	-                  | |  '.            | || (
+2020-02-29 11:05:29	--	-                  | |   |            | ||  )
+2020-02-29 11:05:29	--	-                  | |O__|  .))).     | || (
+2020-02-29 11:05:29	--	-                  | ||    ( O O )    | ||
+2020-02-29 11:05:29	--	-                  | ||===._ (_) _.===| ||
+2020-02-29 11:05:29	--	-                  | ||     '-.-'     | ||
+2020-02-29 11:05:29	--	-                  | ||      The      | ||
+2020-02-29 11:05:29	--	-                  | ||   Revolution  | ||
+2020-02-29 11:05:29	--	-                  | ||   has begun!  | ||
+2020-02-29 11:05:29	--	-                  | ||    ______     | ||
+2020-02-29 11:05:29	--	-              LGB | ||   /      \    | ||
+2020-02-29 11:05:29	--	-                __| ||  (\______/)   | ||_____
+2020-02-29 11:05:29	--	-               /__| ||___) |''| (____| ||____/
+2020-02-29 11:05:29	--	-              /___|_|/  (________)   |_|/___/
+2020-02-29 11:05:29	--	-             /_____________________________/ 
+2020-02-29 11:05:29	--	-  
+2020-02-29 11:05:29	--	-       Policies, rules, etc:
+2020-02-29 11:05:29	--	-         All users must follow the guidelines set forth in the Esper
+2020-02-29 11:05:29	--	-         network charter: http://esper.net/charter.php
+2020-02-29 11:05:29	--	-         Bots are permitted, but must follow the same rules as users.
+2020-02-29 11:05:29	--	-         Additional Bot Policy at: http://esper.net/bots.php 
+2020-02-29 11:05:29	--	-         Fserves are strictly forbidden (XDCC, etc.)
+2020-02-29 11:05:29	--	-         All users must follow French and applicable international law.
+2020-02-29 11:05:29	--	-         Your use of this network implies consent to perform a proxy scan.
+2020-02-29 11:05:29	--	-         We reserve the right to remove anyone at any time for any reason.
+2020-02-29 11:05:29	--	-         
+2020-02-29 11:05:29	--	-       Channels:
+2020-02-29 11:05:29	--	-         #dragonweyr     - Issues requiring network staff intervention.
+2020-02-29 11:05:29	--	-         #help           - General IRC help.
+2020-02-29 11:05:29	--	-     
+2020-02-29 11:05:29	--	-       (Note: these names have been bolded to prevent them from being clickable
+2020-02-29 11:05:29	--	-              by certain browser-based clients. To join a channel, type /join name.)
+2020-02-29 11:05:29	--	-                                                                 
+2020-02-29 11:05:29	--	-        Notes:
+2020-02-29 11:05:29	--	-         Esper serves many communities, please be aware that not every channel
+2020-02-29 11:05:29	--	-           is dedicated to the particular community you've come to visit.
+2020-02-29 11:05:29	--	-           
+2020-02-29 11:05:29	--	-         New to IRC? Helpful information:
+2020-02-29 11:05:29	--	-           http://www.esper.net/getting_started.php
+2020-02-29 11:05:29	--	End of /MOTD command.
+2020-02-29 11:05:29	--	User mode [+i] by morga
+2020-02-29 11:05:45	--	You are now known as EmmCrhis
+2020-02-29 11:05:49	--	You are now known as EmmChris
+2020-02-29 11:05:50	--	NickServ (NickServ@services.esper.net): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2020-02-29 11:06:04	--	MSG(NickServ): identify ********
+2020-02-29 11:06:04	--	NickServ (NickServ@services.esper.net): You are now identified for EmmChris.
+2020-02-29 11:11:47	--	MSG(nickserv): info
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Information on EmmChris (account EmmChris):
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Registered : Feb 29 09:00:07 2020 (11 minutes, 40 seconds ago)
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Entity ID  : AAAAABEFP
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Last addr  : ~morga@188.26.20.117
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Last seen  : now
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Logins from: EmmChris
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Nicks      : EmmChris
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Email      : emmchris@protonmail.com (hidden)
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Flags      : HideMail
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): Language   : default
+2020-02-29 11:11:47	--	NickServ (NickServ@services.esper.net): *** End of Info ***
+2020-02-29 11:11:55	--	MSG(NickServ): info
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Information on EmmChris (account EmmChris):
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Registered : Feb 29 09:00:07 2020 (11 minutes, 47 seconds ago)
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Entity ID  : AAAAABEFP
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Last addr  : ~morga@188.26.20.117
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Last seen  : now
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Logins from: EmmChris
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Nicks      : EmmChris
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Email      : emmchris@protonmail.com (hidden)
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Flags      : HideMail
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): Language   : default
+2020-02-29 11:11:55	--	NickServ (NickServ@services.esper.net): *** End of Info ***
