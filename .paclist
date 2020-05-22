@@ -9,6 +9,7 @@ linux-headers
 tlp
 usbutils
 tzupdate
+nvme-cli
 
 # daemons
 mpd
@@ -142,6 +143,8 @@ discord
 dmenu
 dunst
 firefox
+opera
+pepper-flash
 gimp
 sxhkd
 vlc
@@ -162,6 +165,7 @@ rofi
 sxiv
 zoom
 flashplayer-standalone
+popcorntime-bin
 
 # fonts
 noto-fonts

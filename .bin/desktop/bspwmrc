@@ -29,6 +29,6 @@ bspc config active_border_color     $CL_BLACK_LT
 bspc rule -a Sxiv     state=floating
 bspc rule -a Gimp     state=floating
 bspc rule -a Peek     state=floating
-bspc rule -a Zoom     state=floating
+bspc rule -a zoom     state=floating
 
 synclient TapButton1=1

@@ -24,6 +24,7 @@ plug "occivink/kakoune-gdb" config %{
 plug "ul/kak-lsp" noload do %{
 	cargo build --release --locked
 	cargo install --path . --force
+	cargo clean
 } config %{
 	map global user l -docstring 'load lsp' ':lsp-load<ret>'
 	
@@ -93,10 +94,9 @@ addhl global/ number-lines -hlcursor -min-digits 3
 addhl global/ show-whitespaces -lf ' ' -spc ' ' -nbsp ' ' -tab '⠅'
 addhl global/ show-matching
 
-# highlight TODO, NOTE, and BUG keywords
-# Not sure how to restrict the highlighting to a comment context,
-#   but I don't tend to use uppercase NOTE for variable names anyway
-addhl global/ regex \b(TODO|NOTE|BUG|ERROR)\b 0:default+rb
+# highlight @UPPER tags
+# eg @TODO, #TODO, @NOTE, @BUG, @SAFE
+addhl global/ regex (@|#)\b[A-Z]+\b 0:default+rb
 
 # Bye-bye clippy
 set global ui_options ncurses_assistant=off

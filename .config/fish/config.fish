@@ -5,7 +5,7 @@ set -x EDITOR '/usr/bin/kak'
 set -x VISUAL '/usr/bin/kak'
 set -x PAGER  '/usr/bin/less'
 set -x SHELL  '/usr/bin/fish'
-set -x OPENER "$HOME/.bin/open"
+set -x OPENER "$HOME/.bin/xdg-open"
 
 # Defaults
 set -x LESS       '-RS'

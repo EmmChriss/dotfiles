@@ -3,14 +3,16 @@
 FILE="$1"
 MIME="$(file --mime-type -bL "$FILE")"
 EXT="${FILE#/*/*.}"
-
-if [ -t 0 ]; then
-	exec >/dev/null 2>&1
-fi
+[ -t 1 ] && TTY='yes' || TTY='no'
 
 orphan() {
 	{ "$@" & } &
 }
+
+# Handle links
+case "$(echo "$FILE" | cut -d: -f1)" in
+	magnet) orphan tremc-notify "$FILE"; exit ;;
+esac
 
 # Handle mimetype
 case "$MIME" in
@@ -31,6 +33,8 @@ case "$MIME" in
 	application/pdf)
 		orphan zathura "$FILE"
 		exit ;;
+	
+	
 esac
 
 # Handle externsion
@@ -39,9 +43,9 @@ esac
 
 # Open every txt file in EDITOR
 # I might need to open a txt file in another app, but I don't right now
-if [ "$(file -bL --mime-encoding "$FILE")" != 'binary' ]; then
+if [ "$(file -bL --mime-encoding "$FILE")" != 'binary' ] && [ "$TTY" = yes ]; then
 	$EDITOR "$FILE"
 	exit
 fi
 
-orphan xdg-open "${FILE}"
+orphan /usr/bin/xdg-open "${FILE}"
