@@ -15,6 +15,7 @@ nvme-cli
 mpd
 transmission-cli
 redshift
+psi-notify
 
 # utilities
 acpi

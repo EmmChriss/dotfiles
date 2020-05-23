@@ -25,6 +25,8 @@
 !.config/tmux.conf
 !.config/alacritty
 !.config/bspwm
+!.config/sxhkd
+!.config/dunst
 !.config/fish
 !.config/fontconfig
 !.config/kak
@@ -32,8 +34,10 @@
 !.config/lf
 !.config/mpd
 !.config/ncmpcpp
+!.config/tremc
 !.config/polybar
 !.config/zathura
+!.config/DIR_COLORS
 
 # include scripts
 !.bin
