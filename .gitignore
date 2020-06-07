@@ -1,9 +1,10 @@
 # ignore everything
-/*
+*
 
 # include git files
 !.gitignore
 !.gitconfig
+!.gitmodules
 
 # other files
 !.todo.md
@@ -14,30 +15,32 @@
 !.Xresources
 !.theme
 !.walls
-!.newsboat/urls
 
-# include configs
-!.weechat
-!.config  # include dir
-.config/* # but not the whole subtree
-!.config/compton.conf
-!.config/mimeapps.list
-!.config/tmux.conf
+# include config
+!.config
 !.config/alacritty
-!.config/bspwm
-!.config/sxhkd
 !.config/dunst
 !.config/fish
 !.config/fontconfig
+!.config/hexchat
+!.config/htop
 !.config/kak
 !.config/kak-lsp
 !.config/lf
 !.config/mpd
 !.config/ncmpcpp
-!.config/tremc
 !.config/polybar
+!.config/pulse
+!.config/pulse/client.conf
+!.config/pulse/daemon.conf
+!.config/pulse/default.pa
+!.config/sxhkd
+!.config/tremc
 !.config/zathura
+!.config/compton.conf
 !.config/DIR_COLORS
+!.config/mimeapps.list
+!.config/tmux.conf
 
 # include scripts
 !.bin

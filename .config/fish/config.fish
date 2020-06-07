@@ -16,6 +16,7 @@ alias dots='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
 alias tmux='tmux -2'
 alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
+alias ls='ls -h --group-directories-first --color=auto'
 
 alias gs='git status'
 alias gd='git diff'
@@ -24,7 +25,7 @@ alias gmv='git mv'
 alias grm='git rm'
 
 alias page="eval $PAGER"
-alias sush="doas -s"
+alias sush="sudo -s"
 
 # lf alias
 function lf -w 'lf'

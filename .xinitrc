@@ -1,24 +1,24 @@
 #! /bin/sh
 
-# Pass some env vars to systemd
+# pass some env vars to systemd
 systemctl --user import-environment DISPLAY
 
-# Set xkbmap
+# set xkbmap
 setxkbmap -model pc105 -layout us,hu,ro -variant ,qwerty, -option grp:shifts_toggle
 
-# Disable X screenlocker
+# disable X screenlocker
 xset s off -dpms
 
-# Set numlock
-# Refer to https://bugs.freedesktop.org/show_bug.cgi?id=78012
-numlockx on
+# increase key rate
+xset r rate 300 50
 
-# Fill xrdb for the backup urxvt
+# enable tapping
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Tap Action' 0 0 0 0 1 2 3
+
+# set numlock
+# https://bugs.freedesktop.org/show_bug.cgi?id=78012
+numlockx &
+
 xrdb ~/.Xresources
-
-export SXHKD_SHELL='/bin/sh'
-export TERMINAL='alacritty'
-export WINIT_HIDPI_FACTOR="1.5"
-export THEME=nord
 
 exec bspwm -c $HOME/.bin/desktop/bspwmrc

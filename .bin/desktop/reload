@@ -1,27 +1,34 @@
 #!/bin/sh
 
-export _JAVA_AWT_WM_NONREPARENTING=1
+cd ~
 
-# Reload theme
+# this might be set so reset it
+unset FISH_TOP
+
+monu
+
+# reload theme
 . $HOME/.theme/source
 
-# Set cursor
+bspc config presel_feedback_color   $CL_BLACK_LT
+bspc config normal_border_color     $CL_BLACK_DK
+bspc config focused_border_color    $CL_WHITE_DK
+bspc config active_border_color     $CL_BLACK_LT
+
+$HOME/.bin/desktop/reload-polybar &
+
 xsetroot -cursor_name $THEME_CURSOR
 
-# Set wallpaper
 xwallpaper --zoom ".walls/$THEME_WALL"
 
-# Restart desktop daemons
-killall mond mons picom sxhkd syndaemon redshift
+# killall doesnt wait so I have to
+while test -n "$(pgrep -x redshift)"; do
+	sleep 0.5
+done
 
-redshift &
+sleep 0.5
+
+picom --config ~/.config/compton.conf &
 mond &
 mons -a &
-picom --config ~/.config/compton.conf &
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
-syndaemon &
-
-synclient TouchpadOff=0
-synclient PalmDetect=1
-
-$HOME/.bin/desktop/reload-polybar

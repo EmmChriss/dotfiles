@@ -1,0 +1,6 @@
+[submodule ".cache/kak-plugins/plug.kak"]
+	path = .cache/kak-plugins/plug.kak
+	url = https://github.com/andreyorst/plug.kak
+[submodule ".cache/tmux-plugins/tpm"]
+	path = .cache/tmux-plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

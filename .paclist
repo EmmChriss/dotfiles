@@ -137,7 +137,7 @@ primus
 
 # desktop
 alacritty
-aseprite-skia-bin # precompiled skia lib
+#aseprite-skia-bin # precompiled skia lib
 betterlockscreen
 bspwm
 discord

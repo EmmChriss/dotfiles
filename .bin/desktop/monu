@@ -9,7 +9,7 @@ mon_pri="$(echo "$mons"  | grep '[0-9]:' | grep    '\*' | awk '{print $2}')"
 mon_sec="$(echo "$mons"  | grep '[0-9]:' | grep -v '\*' | awk '{print $2}')"
 
 if [ "$mon_mode" = 'extend' ]; then
-	# two monitors mode
+	# Two monitors mode
 	printf '%s' "$DT_PRI" | xargs -d ' ' -I '{}' bspc desktop '{}' -m $mon_pri
 	printf '%s' "$DT_SEC" | xargs -d ' ' -I '{}' bspc desktop '{}' -m $mon_sec
 	# try deleting 'Desktop' if it exists
@@ -17,13 +17,14 @@ if [ "$mon_mode" = 'extend' ]; then
 	bspc monitor $mon_pri -o $DT_PRI
 	bspc monitor $mon_sec -o $DT_SEC
 else
-	# add 'Desktop' to SECONDARY
+	# Add dummy 'Desktop' to SEC
+	# bspwn doesn't allow a monitor without a desktop
 	[ -z "$mon_sec" ] && mon_sec="$(bspc query -M --names | grep -v $mon_pri)"
 	if [ -n "$mon_sec" ] && bspc query -M -m $mon_sec >/dev/null; then
 		bspc query -D -d Desktop >/dev/null || bspc monitor $mon_sec -a Desktop
 		bspc desktop Desktop -m $mon_sec
 	fi
-	# move all known desktops to INT
+	# Move all known desktops to PRI
 	printf "%s" "$DT_ALL" | xargs -d ' ' -I '{}' bspc desktop '{}' -m $mon_pri
 	bspc monitor $mon_pri -o $DT_ALL
 fi
