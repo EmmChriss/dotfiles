@@ -1,0 +1,4 @@
+.aws/*
+.gnupg/**
+.ssh/*
+.config/hcloud/*

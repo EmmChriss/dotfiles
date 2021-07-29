@@ -1,0 +1,2 @@
+#!/bin/sh
+yay -Qi | grep Size | cut -d: -f2 | tr -d 'B ' | xargs numfmt --from auto | awk 'BEGIN { sum=0 } { sum += $1 } END { print sum }' | numfmt --to=iec-i

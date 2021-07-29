@@ -1,0 +1,3 @@
+#!/bin/sh
+pacmd load-module module-null-sink sink_name=NullSink
+pacmd update-sink-proplist NullSink device.description=NullSink

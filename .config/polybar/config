@@ -1,0 +1,118 @@
+[colors]
+black_dk=${xrdb:color0}
+black_lt=${xrdb:color8}
+red_dk=${xrdb:color1}
+red_lt=${xrdb:color9}
+green_dk=${xrdb:color2}
+green_lt=${xrdb:color10}
+yellow_dk=${xrdb:color3}
+yellow_lt=${xrdb:color11}
+blue_dk=${xrdb:color4}
+blue_lt=${xrdb:color12}
+magenta_dk=${xrdb:color5}
+magenta_lt=${xrdb:color13}
+cyan_dk=${xrdb:color6}
+cyan_lt=${xrdb:color14}
+white_dk=${xrdb:color7}
+white_lt=${xrdb:color15}
+background=#10000000
+foreground=${xrdb:foreground}
+
+[bar/base]
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = true
+height = 16
+border-size = 2
+border-color = ${colors.background}
+padding = 1
+separator = " | "
+line-size = 1
+module-margin = 1
+monitor = ${env:MON}
+font-0 = Font Awesome 5 Free Solid:size=10;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = xos4 Terminus:size=14;2
+wm-restack = bspwm
+fixed-center = true
+
+[bar/bottom]
+inherit = bar/base
+
+modules-left   = bspwm title
+modules-center = 
+modules-right  = xkb clock
+
+[bar/status]
+inherit = bar/base
+bottom = false
+override-redirect = true
+
+modules-left = mpd
+modules-center = load mem
+modules-right = wifi eth bluez vol backlight bat
+
+[module/bspwm]
+type = custom/script
+exec = /home/morga/.bin/polybar/bspwm
+tail = true
+
+[module/title]
+type = internal/xwindow
+label-maxlen = 150
+
+[module/xkb]
+type = internal/xkeyboard
+format = <label-layout>
+
+[module/clock]
+type = custom/script
+exec = /home/morga/.bin/polybar/date
+tail = true
+
+[module/mpd]
+type = custom/script
+exec = /home/morga/.bin/polybar/mpd
+tail = true
+
+[module/load]
+type = custom/script
+exec = cat /proc/loadavg | awk '{print $1}'
+interval = 1
+format-prefix = " "
+
+[module/mem]
+type = custom/script
+exec = free -h | grep 'Mem' | awk '{print $7}'
+interval = 1
+format-prefix = " "
+
+[module/wifi]
+type = custom/script
+exec = /home/morga/.bin/polybar/wifi
+tail = true
+
+[module/eth]
+type = custom/script
+exec = /home/morga/.bin/polybar/eth
+tail = true
+
+[module/bluez]
+type = custom/script
+exec = /home/morga/.bin/polybar/bluez
+tail = true
+
+[module/vol]
+type = custom/script
+exec = /home/morga/.bin/polybar/vol
+tail = true
+
+[module/backlight]
+type = custom/script
+exec = /home/morga/.bin/polybar/backlight
+tail = true
+
+[module/bat]
+type = custom/script
+exec = /home/morga/.bin/polybar/bat
+tail = true

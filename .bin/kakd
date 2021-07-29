@@ -1,0 +1,14 @@
+#! /bin/sh
+
+[ -d /tmp/kakd ] || mkdir /tmp/kakd
+[ -z $1 ] && echo "Please provide a session name" && exit 1
+[ -e "$XDG_RUNTIME_DIR/kakoune/$1" ] && echo "Session name already in use" && exit 1
+
+kak -s "$1" -d &
+PID=$!
+
+echo -n > /tmp/kakd/$1
+echo "$PID" >> /tmp/kakd/$1
+echo "$PWD" >> /tmp/kakd/$1
+
+kakc

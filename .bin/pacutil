@@ -1,0 +1,60 @@
+#!/bin/sh
+# keeps a possibly documented list of all explicitly installed packages
+
+CLR_RESET="\e[0m"
+CLR_HEAD="\e[1m"
+CLR_INST="\e[32m"
+CLR_REMV="\e[31m"
+
+PKG_LIST="$HOME/.paclist"
+
+temp_list_target="$(mktemp)"
+temp_list_current="$(mktemp)"
+trap 'rm $temp_list_target $temp_list_current' EXIT
+
+yay -Qeq > "$temp_list_current"
+cat "$PKG_LIST" > "$temp_list_target"
+
+sed -i '/^#.*$/d'             "$temp_list_target"
+sed -i 's/#.*$//' "$temp_list_target"
+sed -i '/^[[:space:]]*$/d'    "$temp_list_target"
+sed -i 's/[[:space:]]*\([A-Za-z0-9_-]*\)[[:space:]]*/\1/' "$temp_list_target"
+
+sort -o "$temp_list_current" "$temp_list_current"
+sort -o "$temp_list_target" "$temp_list_target"
+if [ -n "$(uniq -D "$temp_list_target")" ]; then
+	printf "%b%s%b\n" \
+		"${CLR_HEAD}${CLR_REMV}" \
+		"Duplicate entries detected" \
+		"${CLR_RESET}"
+	uniq -d "$temp_list_target"*
+	exit 1
+fi
+
+action=a
+case "$1" in
+	i*) action=i ;;
+	r*) action=d ;;
+	l*) action=l ;;
+esac
+
+if [ $action = l ]; then
+	cat "$temp_list_target"
+	wc -l "$temp_list_target" | awk '{print $1}'
+fi
+
+if [ $action = a ] || [ $action = i ]; then
+	printf "%b%s%b\n" \
+		"${CLR_RESET}${CLR_HEAD}" \
+		"Packages that need to be installed" \
+		"${CLR_RESET}${CLR_INST}"
+	comm -23 "$temp_list_target" "$temp_list_current"
+fi
+
+if [ $action = a ] || [ $action = d ]; then
+	printf "%b%s%b\n" \
+		"${CLR_RESET}${CLR_HEAD}" \
+		"Packages that need to be removed" \
+		"${CLR_RESET}${CLR_REMV}"
+	comm -13 "$temp_list_target" "$temp_list_current"
+fi

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[ -z "$1" ] && V=VIRTUAL1 || V="VIRTUAL$1"
+
+err() {
+	[ "$1" ] && printf "error: %s" "$1"
+	exit 1
+}
+
+xrandr | grep -q "$V disconnected" || err "$V has to be disconnected and unconfigured"
+
+modeline="$(cvt 1920 1080 60 | sed '2q;d' | cut -d' ' -f 2- | tr -d \")"
+modename="$(echo "$modeline" | awk '{print $1}')"
+xrandr --newmode $modeline 2>/dev/null # this can fail if mode defined more than once and print an ugly error
+
+xrandr --addmode "$V" $modename
+xrandr --output "$V" --mode $modename --below eDP1

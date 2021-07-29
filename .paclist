@@ -1,0 +1,272 @@
+### this file contains a list of all installed packages and their reason
+
+# base packages
+base
+
+# base-devel group
+autoconf
+automake
+binutils
+bison
+fakeroot
+file
+findutils
+flex
+gawk
+gcc
+gettext
+grep
+groff
+gzip
+libtool
+m4
+make
+pacman
+patch
+pkgconf
+sed
+sudo
+texinfo
+which
+
+# system pkgs
+acpid
+intel-ucode
+linux
+linux-firmware
+linux-headers
+refind
+tlp
+tlp-rdw
+usbutils
+tzupdate
+nvme-cli
+
+# daemons
+mpd
+transmission-cli
+redshift
+psi-notify
+megacmd-bin
+
+# utilities
+acpi
+aria2
+aspell
+entr
+
+# archives
+atool
+unrar
+unzip
+zip
+p7zip
+
+# dev tools
+cmake
+docker
+gdb
+lldb
+gnu-netcat
+hugo
+jdk-openjdk
+valgrind
+git
+tig
+gitui
+strace
+openssh
+perf
+flamegraph-git
+
+# DEVELOPMENT
+
+## LANGS
+
+python
+python-pip # Python package manager
+python-pylint # linter
+#python-rope # refactoring library??
+python-virtualenv # project-local env
+#ipython # intelligent python shell
+
+ruby
+shellcheck # (ba)sh linter
+#ktlint # kotlin linter
+rustup # Rust version manager
+rust-analyzer
+go
+ghc # Glasgow Haskell Compiler
+gprolog
+
+# term cmds
+fortune-mod
+lolcat
+cowsay
+highlight
+man-pages
+mlocate
+#neofetch # pretty print system info
+jq # json operator
+pv # pipe buffering and measurement
+pmount # user (un)mounting
+socat # dependency for kakoune-gdb
+rr-bin # replay-debugger plugin for gdb and dependency for kakoune-gdb
+wget
+youtube-dl
+traceroute
+rsync
+speedtest-cli
+tldr
+time
+fzf
+upower
+arch-install-scripts # bc. of arch-chroot
+
+# term apps
+#bat # pretty printed cat
+#elinks # terminal web browser
+fish
+htop
+iftop
+iotop
+powertop
+lf-bin
+man-db
+mosh
+ncmpcpp
+newsboat
+kakoune
+tmux
+tremc
+vim
+irssi
+pulsemixer
+mpc
+octave 
+
+# xorg and graphics
+##xf86-input-synaptics
+xf86-video-intel
+bumblebee
+bbswitch
+xorg-server
+#xorg-xbacklight # replaced by acpilight
+acpilight
+xorg-xev
+xorg-xinit
+xorg-xinput
+xorg-xprop
+xorg-xset
+xorg-xsetroot
+xorg-xwininfo
+xorg-xfd
+xorg-xlsfonts
+xsel
+xwallpaper
+mesa-vdpau
+nvidia
+opencl-nvidia
+libva-intel-driver
+vulkan-intel
+primus
+clinfo
+dragon-drag-and-drop-git
+
+# desktop
+alacritty
+aseprite-skia-bin
+godot
+betterlockscreen
+bspwm
+discord
+dmenu
+dunst
+firefox
+opera
+pepper-flash
+gimp
+sxhkd
+vlc
+zathura
+zathura-pdf-mupdf
+libreoffice-still
+maim
+mons
+peek
+wmctrl
+xdotool
+numlockx
+picom
+polybar
+pulseaudio
+pulseaudio-bluetooth
+rofi
+sxiv
+zoom
+#flashplayer-standalone
+popcorntime-bin
+typora
+scid_vs_pc
+stockfish
+qpdfview
+# logisim
+intellij-idea-community-edition
+code
+
+# fonts
+noto-fonts
+nerd-fonts-terminus
+terminus-font
+ttf-font-awesome
+
+# cracking
+aircrack-ng
+
+# android
+#android-emulator
+#android-sdk
+#android-sdk-platform-tools
+#android-studio
+#android-udev
+
+# markup
+asciidoctor
+
+# calculation
+bc
+
+# bluetooth
+bluez-tools
+bluez-utils
+
+# fs drivers
+dosfstools
+ntfs-3g
+lvm2
+xfsprogs
+sshfs
+sysfsutils
+gptfdisk
+mtpfs
+
+# pacman utils
+pacman-contrib
+downgrade
+yay
+
+# network
+iw
+inetutils
+net-tools
+networkmanager
+wireless_tools
+iwd
+
+curl
+httpie # http client
+hcloud # Hetzner terminal client
+
+# media
+handbrake
+obs-studio

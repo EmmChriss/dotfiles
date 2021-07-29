@@ -1,0 +1,20 @@
+#! /bin/bash
+
+source $HOME/.theme/source
+
+IFACE=enp4s0
+ICON=
+ip -o -br -4 monitor dev $IFACE | while :; do
+	unset addr
+	ip="$(ip addr show dev enp4s0)"
+	if echo "$ip" | grep -q 'state UP'; then
+		cl=$CL_GREEN_DK
+		addr="$(echo "$ip" | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
+	else
+		cl=$CL_RED_DK
+	fi
+	echo "%{A2:printf $addr | xsel -ib:}%{F$cl}$ICON%{F-}%{A}"
+	
+	sleep 1s
+	read -n 512 -t 9 line
+done

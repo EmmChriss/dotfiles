@@ -1,0 +1,42 @@
+snippet_support = true
+verbosity = 2
+
+[server]
+timeout = 1800
+
+[language.rust]
+filetypes = ["rust"]
+roots = ["Cargo.toml"]
+# command = "sh"
+# args = ["-c", "eval \"$(rustup which rls)\""]
+command = "rust-analyzer"
+# formatTool = "rustfmt"
+
+[language.bash]
+filetypes = ["sh"]
+roots = [".git", ".hg"]
+command = "bash-language-server"
+args = ["start"]
+
+[language.python]
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+command = "pyls"
+offset_encoding = "utf-8"
+
+[language.zig]
+filetypes = ["zig"]
+roots = ["build.zig"]
+command = "zls"
+
+[language.haskell]
+filetypes = ["haskell"]
+roots = ["Setup.hs", "stack.yaml", "*.cabal"]
+command = "haskell-language-server-wrapper"
+args = ["lsp"]
+
+[language.csharp]
+filetypes = ["csharp"]
+roots = ["*.csproj"]
+command = "omnisharp"
+args = ["-lsp"]

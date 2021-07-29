@@ -1,0 +1,34 @@
+#! /bin/bash
+
+source $HOME/.theme/source
+
+#IFACE=wlp3s0
+IFACE=wlan0
+ICON=
+ip -o -br -4 monitor dev $IFACE | while :; do
+	if iw dev | grep -q ${IFACE}mon; then
+		echo "%{F$CL_YELLOW_DK}${ICON}%{F-} [${IFACE}mon]"
+	elif test "$(iw dev $IFACE link)" != 'Not connected.'; then
+		iw=`iw dev $IFACE link`
+		
+		essid=`echo "$iw" | sed '2q;d' | cut -c 8-`
+		sig=`echo "$iw" | sed '6q;d' | cut -c 10- | awk '{print $1}'`
+		sig_perc=`echo "2*($sig+100)" | bc`
+		
+		test $sig_perc -gt 100 && sig_perc=100
+		test $sig_perc -lt 0   && sig_perc=0
+		
+		unset sig_cl
+		test $sig_perc -lt 50 && sig_cl=$CL_YELLOW_DK
+		test $sig_perc -lt 20 && sig_cl=$CL_RED_DK
+		
+		addr="$(ip addr show dev $IFACE | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"
+		
+		echo "%{A2:printf $addr | xsel -ib:}%{F$CL_GREEN_DK}${ICON}%{F-}%{A} [$essid, %{F$sig_cl}$sig_perc%{F-}]"
+	else
+		echo "%{F$CL_RED_DK}${ICON}%{F-}"
+	fi
+	
+	sleep 1
+	read -n 512 -t 4 line
+done

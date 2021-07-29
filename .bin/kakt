@@ -1,0 +1,19 @@
+#! /bin/bash
+
+if [ -z $1 ]; then
+	for s in /tmp/kakd/*; do
+		pid="$(cat $s | sed '1q;d')"
+		dir="$(cat $s | sed '2q;d')"
+		if pwd | grep -q "$dir"; then
+			kill $pid
+			rm $s
+			exit
+		fi
+	done
+	echo "Couldn't find session"
+	exit 1
+else
+	[ -e /tmp/kakd/$1 ] || echo "No such session" && exit 1
+	exec kak -c "$1"
+fi
+kak -clear

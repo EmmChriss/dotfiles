@@ -1,0 +1,42 @@
+#! /bin/sh
+
+FILE="$1"
+MIME="$(file --mime-type -bL "$FILE")"
+EXT="${FILE##*.}"
+[ -t 1 ] && TTY='yes' || TTY='no'
+
+orphan() {
+	{ "$@" & } &
+}
+
+# Handle links
+case "$(echo "$FILE" | cut -d: -f1)" in
+	magnet) orphan tremc-notify "$FILE"; exit ;;
+esac
+
+# Handle mimetype
+case "$MIME" in
+	image/*)
+		files="$(find "$(dirname "$FILE")" -maxdepth 1 -type f | grep '\(png\|jpg\)$' | sort)"
+		id="$(echo "$files" | grep -n "$FILE" | cut -d: -f1)"
+		echo "$files" | orphan sxiv -a -i -n $id
+		exit ;;
+	
+	application/pdf)
+		orphan zathura "$FILE"
+		exit ;;
+esac
+
+# Handle externsion
+case "$EXT" in
+	torrent) orphan tremc $FILE; exit ;;
+esac
+
+# Open every txt file in EDITOR
+# I might need to open a txt file in another app, but I don't right now
+if [ "$(file -bL --mime-encoding "$FILE")" != 'binary' ] && [ "$TTY" = yes ]; then
+	$EDITOR "$FILE"
+	exit
+fi
+
+/usr/bin/xdg-open "${FILE}"

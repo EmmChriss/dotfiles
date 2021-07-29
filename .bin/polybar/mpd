@@ -1,0 +1,23 @@
+#! /bin/bash
+
+source "$(dirname "$0")/color"
+
+while true; do
+	if mpc 2>&1 1>/dev/null | grep -q "Connection ref"; then
+		echo
+		sleep 5
+		continue
+	elif mpc 2>/dev/null | head -n 1 | grep -Eq '^volume:.*? repeat:.*? random:.*? single:.*? consume:.*?$'; then
+		echo
+		mpc idle > /dev/null
+		continue
+	fi
+	
+	title="$(mpc | head -n 1)"
+	echo "%{B$CL_BLACK_DK}%{F$CL_FG} $(mpc | sed '2q;d' | awk '{print $3}') %{B-}%{F-}$title" | cut -c -100
+	if [ "$(mpc | sed '2q;d' | awk '{print $1}')" = '[playing]' ]; then
+		sleep 1
+	else
+		mpc idle > /dev/null
+	fi
+done

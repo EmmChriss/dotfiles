@@ -1,0 +1,5 @@
+#!/bin/sh
+/usr/bin/dmenu -f \
+	-fn 'xos4 Terminus:size=10' \
+	-nb "#15171b" -nf "#D8DEE9" \
+	-sb "#2E3440" -sf "#D8DEE9" $@

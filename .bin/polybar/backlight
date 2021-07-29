@@ -1,0 +1,11 @@
+#! /bin/bash
+
+source $HOME/.theme/source
+
+bl
+
+ICON=
+echo /run/user/1000/bl | entr -n 'bl' |
+while read -r bl; do
+	echo "%{F$CL_YELLOW_DK}$ICON%{F-} $bl%"
+done

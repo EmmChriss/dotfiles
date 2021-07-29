@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd /tmp
+hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)" | tr '[:upper:]' '[:lower:]')
+trap "rm '$hash.torrent'" EXIT
+aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
+title="$(transmission-show "$hash.torrent" | head -n 1 | cut -d ' ' -f 2-)"
+tremc "$hash.torrent" && notify-send "Torrent added: $title"

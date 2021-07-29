@@ -1,0 +1,33 @@
+#!/bin/sh
+
+BLFILE="$XDG_RUNTIME_DIR/bl"
+if test ! -f "$BLFILE"; then
+	val=`echo "$(xbacklight -get)*90/100+10" | bc -l`
+	exp=`echo "l($val)/l(10)" | bc -l`
+	perc=`echo "($exp-1)*100" | bc -l`
+	perc_round=`echo "($perc+0.5)/1" | bc`
+	echo $perc_round > "$BLFILE"
+fi
+
+current=`cat $BLFILE`
+if test $# = '0'; then
+	echo $current
+elif test $# = '1'; then
+	op=`echo $1 | cut -c1`
+	if test $op = '+'; then
+		next=`echo "$current+$(echo $1 | cut -c 2-)" | bc`
+	elif test $op = '-'; then
+		next=`echo "$current-$(echo $1 | cut -c 2-)" | bc`
+	else
+		next=$1
+	fi
+	
+	test $next -gt 100 && next=100
+	test $next -lt 0   && next=0
+	echo $next > $BLFILE
+	
+	exp=`echo "($next/100)+1" | bc -l`
+	val=`echo "(e($exp*l(10))-10)*100/90" | bc -l`
+	
+	xbacklight -set $val -steps 10
+fi

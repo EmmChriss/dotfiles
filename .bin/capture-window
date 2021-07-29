@@ -1,0 +1,2 @@
+#!/bin/sh
+ffmpeg -f x11grab -framerate 30 $(slop -f '-video_size %wx%h -i +%x,%y') "$HOME/Videos/Captures/$(date +%Y-%m-%d_%H-%M_%S).mp4"

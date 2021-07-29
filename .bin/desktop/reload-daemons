@@ -1,0 +1,18 @@
+#!/bin/sh
+
+DAEMONS="mond mons picom sxhkd redshift megasimplesync"
+
+killall $DAEMONS > /dev/null
+
+# killall doesnt wait so I have to
+while test -n "$(pgrep -x redshift)"; do
+	killall redshift
+	sleep 0.5
+done
+
+picom --config ~/.config/compton.conf &
+mond &
+mons -a &
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+redshift &
+start-megasync > /dev/null

@@ -1,0 +1,29 @@
+#! /bin/bash
+
+source $HOME/.theme/source
+
+BAT='/sys/class/power_supply/BAT0/'
+ICON=
+acpi_listen | grep --line-buffered 'ac_adapter' | while true; do
+	unset PERC_COLOR
+	
+	PERC=`cat $BAT/capacity`
+	STAT=`cat $BAT/status`
+	
+	case $STAT in
+		C*) STAT=`acpi | awk '{print $5}' | head -c 5`
+			STAT="$STAT "
+			PERC_COLOR=$CL_GREEN_DK
+			;;
+		D*) STAT=`acpi | awk '{print $5}' | head -c 5`
+			STAT="$STAT "
+			[ $PERC -lt 50  ] && PERC_COLOR=$CL_YELLOW_DK
+			[ $PERC -lt 20  ] && PERC_COLOR=$CL_RED_DK
+			;;
+		*)  STAT= ;;
+	esac
+	echo "$ICON $STAT%{F$PERC_COLOR}$PERC%%{F-}"
+	
+	read -t 8 unused
+	sleep 2
+done
