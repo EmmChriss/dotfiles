@@ -1,0 +1,59 @@
+#!/bin/sh
+# define colors for later use
+
+# export everything
+set -a
+
+xrdb -merge ~/.theme/Xresources
+
+THEME_CURSOR=left_ptr
+THEME_FONT='xos4 Terminus'
+THEME_WALL=samurai.jpg
+
+function xgetcolor() {
+	xrdb -query | grep "${1:-color}:" | awk '{print $2}'
+}
+
+CL0=`xgetcolor color0`
+CL1=`xgetcolor color1`
+CL2=`xgetcolor color2`
+CL3=`xgetcolor color3`
+CL4=`xgetcolor color4`
+CL5=`xgetcolor color5`
+CL6=`xgetcolor color6`
+CL7=`xgetcolor color7`
+CL8=`xgetcolor color8`
+CL9=`xgetcolor color9`
+CL10=`xgetcolor color10`
+CL11=`xgetcolor color11`
+CL12=`xgetcolor color12`
+CL13=`xgetcolor color13`
+CL14=`xgetcolor color14`
+CL15=`xgetcolor color15`
+
+CL_BG=`xgetcolor background`
+CL_FG=`xgetcolor foreground`
+
+CL_BLACK_DK=$CL0
+CL_BLACK_LT=$CL8
+
+CL_RED_DK=$CL1
+CL_RED_LT=$CL9
+
+CL_GREEN_DK=$CL2
+CL_GREEN_LT=$CL10
+
+CL_YELLOW_DK=$CL3
+CL_YELLOW_LT=$CL11
+
+CL_BLUE_DK=$CL4
+CL_BLUE_LT=$CL12
+
+CL_MAGENTA_DK=$CL5
+CL_MAGENTA_LT=$CL13
+
+CL_CYAN_DK=$CL6
+CL_CYAN_LT=$CL14
+
+CL_WHITE_DK=$CL7
+CL_WHITE_LT=$CL15
