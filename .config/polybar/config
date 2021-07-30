@@ -32,7 +32,7 @@ module-margin = 1
 monitor = ${env:MON}
 font-0 = Font Awesome 5 Free Solid:size=10;2
 font-1 = Font Awesome 5 Brands:size=10;2
-font-2 = xos4 Terminus:size=14;2
+font-2 = Terminus:size=14;2
 wm-restack = bspwm
 fixed-center = true
 

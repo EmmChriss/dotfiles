@@ -31,28 +31,22 @@ which
 
 # system pkgs
 acpid
-intel-ucode
+amd-ucode
 linux
 linux-firmware
 linux-headers
 refind
 tlp
 tlp-rdw
-usbutils
 tzupdate
-nvme-cli
 
 # daemons
-mpd
 transmission-cli
 redshift
-psi-notify
-megacmd-bin
 
 # utilities
 acpi
 aria2
-aspell
 entr
 
 # archives
@@ -68,13 +62,9 @@ docker
 gdb
 lldb
 gnu-netcat
-hugo
-jdk-openjdk
-valgrind
 git
 tig
 gitui
-strace
 openssh
 perf
 flamegraph-git
@@ -117,7 +107,7 @@ youtube-dl
 traceroute
 rsync
 speedtest-cli
-tldr
+tealdeer # tldr written in rust
 time
 fzf
 upower
@@ -147,12 +137,11 @@ octave
 
 # xorg and graphics
 ##xf86-input-synaptics
-xf86-video-intel
-bumblebee
-bbswitch
+xf86-video-amdgpu
+#bumblebee
+#bbswitch
 xorg-server
-#xorg-xbacklight # replaced by acpilight
-acpilight
+xorg-xbacklight # replaced by acpilight
 xorg-xev
 xorg-xinit
 xorg-xinput
@@ -165,26 +154,26 @@ xorg-xlsfonts
 xsel
 xwallpaper
 mesa-vdpau
-nvidia
-opencl-nvidia
-libva-intel-driver
-vulkan-intel
-primus
-clinfo
+#nvidia
+#opencl-nvidia
+#libva-intel-driver
+#vulkan-intel
+#primus
+#clinfo
 dragon-drag-and-drop-git
 
 # desktop
 alacritty
-aseprite-skia-bin
-godot
-betterlockscreen
+#aseprite-skia-bin
+#godot
+#betterlockscreen
 bspwm
 discord
 dmenu
 dunst
-firefox
+#firefox
 opera
-pepper-flash
+#pepper-flash
 gimp
 sxhkd
 vlc
@@ -196,7 +185,7 @@ mons
 peek
 wmctrl
 xdotool
-numlockx
+#numlockx
 picom
 polybar
 pulseaudio
@@ -205,14 +194,14 @@ rofi
 sxiv
 zoom
 #flashplayer-standalone
-popcorntime-bin
+#popcorntime-bin
 typora
-scid_vs_pc
-stockfish
+#scid_vs_pc
+#stockfish
 qpdfview
 # logisim
 intellij-idea-community-edition
-code
+#code
 
 # fonts
 noto-fonts
@@ -221,7 +210,7 @@ terminus-font
 ttf-font-awesome
 
 # cracking
-aircrack-ng
+#aircrack-ng
 
 # android
 #android-emulator
@@ -231,14 +220,14 @@ aircrack-ng
 #android-udev
 
 # markup
-asciidoctor
+#asciidoctor
 
 # calculation
 bc
 
 # bluetooth
 bluez-tools
-bluez-utils
+#bluez-utils
 
 # fs drivers
 dosfstools

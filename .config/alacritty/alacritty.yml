@@ -15,7 +15,7 @@ scrolling:
 
 font:
   normal:
-    family: xos4 Terminus
+    family: Terminus
     # family: ypn envypn
   
   size: 11.0

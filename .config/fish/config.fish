@@ -30,6 +30,7 @@ alias sush="sudo -s"
 alias bt="bluetoothctl"
 
 # lf alias
+
 function lf -w 'lf'
 	set tmp (mktemp)
 	command lf -last-dir-path=$tmp $argv
@@ -96,7 +97,7 @@ if status is-login
 	
 	set -x LS_COLORS (sh -c 'eval $(dircolors $HOME/.config/DIR_COLORS); echo $LS_COLORS')
 	
-	[ (tty) = "/dev/tty1" ]; and exec startx > /dev/null
+	#[ (tty) = "/dev/tty1" ]; and exec startx > /dev/null
 else if [ -z "$FISH_TOP" ]
 	set -x FISH_TOP no
 end
