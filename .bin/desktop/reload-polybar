@@ -8,7 +8,7 @@ while test -n "$(pgrep -x polybar)"; do
 done
 
 bspc query -M --names | xargs -I '{}' sh -c "MON='{}' polybar -r bottom &"
-MON="$mon_pri" polybar -r status &
+env MON="$mon_pri" polybar -r status &
 
 sleep 1s
 

@@ -1,5 +1,12 @@
-source %sh{ echo "$HOME/.cache/kak-plugins/plug.kak/rc/plug.kak" }
+evaluate-commands %sh{
+	plugins="$HOME/.cache/kak-plugins"
+	mkdir -p "$plugins"
+	[ ! -e "$plugins/plug.kak" ] && \
+		git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+	printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
 set global plug_install_dir %sh{ echo "$HOME/.cache/kak-plugins" }
+set global plug_always_ensure true
 plug 'andreyorst/plug.kak' noload
 # plug 'delapouite/kakoune-palette'
 plug "Delapouite/kakoune-buffers" config %{
@@ -38,8 +45,8 @@ plug "occivink/kakoune-gdb" config %{
 plug "ul/kak-lsp" noload config %{
 	map global user l -docstring 'load lsp' ':lsp-load<ret>'
 	
-	define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error }
-	define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous }
+	define-command en -docstring 'go to next error/warning from lsp' %{ lsp-find-error }
+	define-command ep -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous }
 	define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error; lsp-find-error --previous }
 	
 	declare-option -hidden str lsp_progress ""

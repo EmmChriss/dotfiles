@@ -1,6 +1,4 @@
--- put user settings here
--- this module will be loaded after everything else when the application starts
--- it will be automatically reloaded when saved
+--------------------------- Modules -------------------------------------
 
 local core = require "core"
 
@@ -9,10 +7,6 @@ local config = require "core.config"
 local style = require "core.style"
 
 config.indent_size = 4
-
-local lintplus = require "plugins.lintplus"
-lintplus.setup.lint_on_doc_load()
-lintplus.setup.lint_on_doc_save()
 
 ------------------------------ Themes ----------------------------------------
 
@@ -48,10 +42,20 @@ lintplus.setup.lint_on_doc_save()
 
 ------------------------------ Plugins ----------------------------------------
 
--- enable or disable plugin loading setting config entries:
+-- Lint+
+local lintplus = require "plugins.lintplus"
+lintplus.setup.lint_on_doc_load()
+lintplus.setup.lint_on_doc_save()
 
--- enable trimwhitespace, otherwise it is disable by default:
--- config.trimwhitespace = true
---
--- disable detectindent, otherwise it is enabled by default
--- config.detectindent = false
+-- LSP
+local lspconfig = require "plugins.lsp.config"
+
+-- C/Cpp: clangd
+lspconfig.clangd.setup {}
+
+-- Rust: rust-anaylzer
+lspconfig.rust_analyzer.setup {}
+
+-- Zig: zls
+lspconfig.zls.setup {}
+

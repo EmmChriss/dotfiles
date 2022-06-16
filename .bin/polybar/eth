@@ -2,11 +2,11 @@
 
 source $HOME/.theme/source
 
-IFACE=enp4s0
+IFACE=eno1
 ICON=
 ip -o -br -4 monitor dev $IFACE | while :; do
 	unset addr
-	ip="$(ip addr show dev enp4s0)"
+	ip="$(ip addr show dev $IFACE)"
 	if echo "$ip" | grep -q 'state UP'; then
 		cl=$CL_GREEN_DK
 		addr="$(echo "$ip" | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)"

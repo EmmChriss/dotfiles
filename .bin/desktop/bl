@@ -29,5 +29,5 @@ elif test $# = '1'; then
 	exp=`echo "($next/100)+1" | bc -l`
 	val=`echo "(e($exp*l(10))-10)*100/90" | bc -l`
 	
-	xbacklight -set $val -steps 10
+	xbacklight -set $val -steps 5
 fi

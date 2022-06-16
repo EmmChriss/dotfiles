@@ -1,7 +1,4 @@
-#! /bin/sh
-
-# pass some env vars to systemd
-systemctl --user import-environment DISPLAY PATH 
+#! /bin/bash
 
 # set xkbmap
 setxkbmap -model pc105 -layout us,hu,ro -variant ,qwerty, -option grp:shifts_toggle
@@ -13,17 +10,36 @@ xset s off -dpms
 xset r rate 300 50
 
 # enable tapping
-#xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Tap Action' 0 0 0 0 1 2 3
-#xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 xinput set-prop 'MSFT0001:00 04F3:3186 Touchpad' 'libinput Tapping Enabled' 1
 
 # set numlock
 # https://bugs.freedesktop.org/show_bug.cgi?id=78012
-#numlockx &
+numlockx &
 
 xrdb ~/.Xresources
 
-PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
+# setup prime offloading
+xrandr --setprovideroutputsource 1 0
+
+export _JAVA_OPTIONS='-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export _JAVA_AWT_WM_NONREPARENTING=1
+export SXHKD_SHELL='/bin/sh'
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
+
+export TERMINAL=alacritty
+export BROWSER=opera
+export EDITOR=hx
+export VISUAL=hx
+export PAGER=less
+export OPERNER=xdg-open
 eval $(dircolors $HOME/.config/DIR_COLORS)
 
-exec bspwm -c $HOME/.bin/desktop/bspwmrc > ~/.log 2>&1
+# pass some env vars to systemd
+systemctl --user import-environment PATH DISPLAY XAUTHORITY DBUS_SESSION_BUS_ADDRESS LS_COLORS SXHKD_SHELL _JAVA_AWT_WM_NONREPARENTING _JAVA_OPTIONS \
+  TERMINAL BROWSER EDITOR VISUAL PAGER OPENER
+
+# trigger graphical.target
+systemctl --user --no-block start xsession.target
+
+# start stuff
+bspwm

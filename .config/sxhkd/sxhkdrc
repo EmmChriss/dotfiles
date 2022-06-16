@@ -6,13 +6,17 @@
 super + Return
 	alacritty
 
+# backup terminal
+super + shift + Return
+	xterm
+
 # launcher
 super + space
 	drun
 
 # programs
-super + ctrl + {b, shift + b}
-	{opera,opera-private}
+super + ctrl + b
+	opera
 
 # reload
 super + Escape
@@ -52,8 +56,12 @@ super + {_,shift + }grave
 	bspc node  -f {prev,next}.local
 
 # focus/send to desktop
-super + {_,shift + }{_,alt + }{1-9,0}
-	bspc {desktop -f,node -d} '{^,_}{1-9,10}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '{I,II,III,IV,V,VI,VII,VIII,IX,X}'
+
+# focus/send to desktop - part II
+super + {_,shift + }alt + {1-9,0}
+	bspc {desktop -f,node -d} '{1-9,10}'
 
 # focus/send to prev/next desktop
 super + {_,shift + }bracket{left,right}
@@ -113,7 +121,3 @@ XF86MonBrightness{Up,Down}
 # mpd control
 XF86Audio{Play,Next,Prev}
 	mpc -q {toggle,next,prev}
-
-# alternate XF86AudioNext
-alt + XF86AudioPrev
-	mpc -q next

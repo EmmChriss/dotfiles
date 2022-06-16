@@ -1,8 +1,6 @@
 #!/bin/sh
 
-echo Reloading daemons
-
-DAEMONS="mond mons picom sxhkd redshift megasimplesync"
+DAEMONS="mond mons"
 
 killall $DAEMONS > /dev/null
 
@@ -12,11 +10,5 @@ while test -n "$(pgrep -x redshift)"; do
 	sleep 0.5
 done
 
-picom --config ~/.config/compton.conf &
 mond &
 mons -a &
-sxhkd -c ~/.config/sxhkd/sxhkdrc &
-redshift &
-start-megasync > /dev/null
-
-echo Done

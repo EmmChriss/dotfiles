@@ -6,8 +6,10 @@ ICON_OFF=
 ICON_MUTE=
 pactl subscribe | grep --line-buffered 'sink' |
 while :; do
-	[ "$(pulsemixer --get-mute)" = '1' ] && printf "$ICON_MUTE" || printf "$ICON_UP"
-	printf " %s%%\n" "$(pulsemixer --get-volume | awk '{print $1}')"
+	# vol="$(pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{print $5}' | cut -d% -f1)"
+	vol=`pulsemixer --get-volume | awk '{print $1}'`
+	[ "$(pulsemixer --get-mute)" = '1' ] && icon="$ICON_MUTE" || icon="$ICON_UP"
+	printf " %s%%\n" "$icon $(pulsemixer --get-volume | awk '{print $1}')"
 	
 	read -r line
 	sleep 0.2

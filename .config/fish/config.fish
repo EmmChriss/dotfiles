@@ -1,13 +1,38 @@
 # Environment
 
-# Preferences
-set -x EDITOR '/usr/bin/kak'
-set -x VISUAL '/usr/bin/kak'
-set -x PAGER  '/usr/bin/less'
-set -x SHELL  '/usr/bin/fish'
-set -x OPENER "$HOME/.bin/xdg-open"
+# on login
+if status is-login && [ (tty) = '/dev/tty1' ]
+	echo "[0] Only AMD"
+	echo "[1] PRIME"
+	read -p "echo '(0) '" -n 1 answer
+	
+	if [ $answer = 1 ]
+		# PRIME
+		
+		# switch drivers
+		while lsmod | grep -q nouveau
+			sudo rmmod nouveau
+			sleep 1
+		end
+		lsmod | grep -q nvidia || sudo modprobe nvidia nvidia_uvm nvidia_modeset nvidia_drm
+		sudo nvidia-smi -pm 1
+	else
+		# AMD
+		
+		# switch drivers
+		while lsmod | grep -q nvidia
+			sudo nvidia-smi -pm 0
+			sudo rmmod nvidia nvidia_uvm nvidia_modeset nvidia_drm
+			sleep 1
+		end
+		lsmod | grep -q nouveau || sudo modprobe nouveau
+	end
+	
+	exec startx
+end
 
-# Defaults
+# Preferences
+set -x LS_COLORS (sh -c 'eval $(dircolors $HOME/.config/DIR_COLORS); echo $LS_COLORS')
 set -x LESS       '-RS'
 set -x BAT_THEME  'TwoDark'
 
@@ -16,7 +41,7 @@ alias dots='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
 alias tmux='tmux -2'
 alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
-alias ls='ls -h --group-directories-first --color=auto'
+alias ls='ls -lh --group-directories-first --color=auto'
 
 alias gs='git status'
 alias gd='git diff'
@@ -87,17 +112,6 @@ function fish_prompt
 	echo -n -s $USER (set_color blue) $ssh (set_color normal) ' ' (set_color $color_cwd) (prompt_pwd) (set_color red) $fail (set_color normal) $suffix ' '
 end
 
-# login stuff
-if status is-login
-	set -p PATH "$HOME/.local/bin"
-	set -p PATH "$HOME/.cargo/bin"
-	set -p PATH $HOME/.gem/ruby/*/bin
-	set -p PATH "$HOME/.bin"
-	set -p PATH "$HOME/.bin/desktop"
-	
-	set -x LS_COLORS (sh -c 'eval $(dircolors $HOME/.config/DIR_COLORS); echo $LS_COLORS')
-	
-	#[ (tty) = "/dev/tty1" ]; and exec startx > /dev/null
-else if [ -z "$FISH_TOP" ]
+if [ -z "$FISH_TOP" ]
 	set -x FISH_TOP no
 end

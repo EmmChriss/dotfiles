@@ -40,3 +40,7 @@ filetypes = ["csharp"]
 roots = ["*.csproj"]
 command = "omnisharp"
 args = ["-lsp"]
+settings_section = "omnisharp"
+
+[language.csharp.settings.omnisharp]
+"omnisharp.useGlobalMono" = "always"

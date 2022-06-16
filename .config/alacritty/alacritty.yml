@@ -9,14 +9,15 @@ window:
   dynamic_padding: true
   dynamic_title: true
 
+  opacity: 0.9
+
 scrolling:
-  history: 1000
+  history: 500
   multiplier: 3
 
 font:
   normal:
     family: Terminus
-    # family: ypn envypn
   
   size: 11.0
 
@@ -50,8 +51,6 @@ colors:
     magenta: '0xB48EAD'
     cyan: '0x8FBCBB'
     white: '0xECEFF4'
-
-background_opacity: 0.9
 
 mouse:
   hide_when_typing: true
