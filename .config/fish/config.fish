@@ -83,6 +83,13 @@ bind \cf 'lf; commandline -f repaint'
 
 # fish config
 function fish_greeting
+	set yadm_uncommited (yadm diff --numstat | wc -l)
+	if [ $yadm_uncommited -gt 0 ]
+		echo (set_color red) 'YADM' (set_color normal) ": $yadm_uncommited uncommited changes"
+	else
+		echo (set_color green) 'YADM: OK' (set_color normal)
+	end
+	
 	if [ "$FISH_TOP" = no ]
 		set -x FISH_TOP yes
 		fortune -s | cowsay | lolcat
