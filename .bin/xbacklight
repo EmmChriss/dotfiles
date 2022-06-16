@@ -1,0 +1,5 @@
+#!/bin/sh
+list="$(/usr/bin/xbacklight -list)"
+ctrl="$(echo "$list" | grep amd)"
+[ -z "$ctrl" ] && ctrl="$(echo "$list" | grep nvidia)"
+exec /usr/bin/xbacklight -ctrl "$ctrl" $@

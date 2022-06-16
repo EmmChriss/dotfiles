@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync stuff
+
+[Service]
+ExecStart=/usr/bin/mega-cmd-server
+Restart=always
+
+[Install]
+WantedBy=default.target

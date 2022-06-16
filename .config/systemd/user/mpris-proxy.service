@@ -1,0 +1,9 @@
+[Unit]
+Description=Make bluetooth headset buttons work
+
+[Service]
+ExecStart=/usr/bin/mpris-proxy
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -2,3 +2,5 @@
 .gnupg/**
 .ssh/*
 .config/hcloud/*
+.megaCmd/session
+.netrc

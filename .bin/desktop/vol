@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if test $# = 0; then
+	current="pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{print $5}' | cut -d% -f1"
+fi
+
+case $1 in
+	mute) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
+	@(+|-)+([[:digit:]]) ) pactl set-sink-volume @DEFAULT_SINK@ $1 ;;
+esac

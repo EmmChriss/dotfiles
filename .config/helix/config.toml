@@ -1,0 +1,20 @@
+theme = "onedark"
+
+[editor]
+mouse = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace]
+render = { space = "none", tab = "all", newline = "none" }
+
+[keys.normal]
+# swap yanking and non-yanking delete and change
+d = "delete_selection_noyank"
+A-d = "delete_selection"
+c = "change_selection_noyank"
+A-c = "change_selection"
