@@ -82,16 +82,20 @@ bind \cf 'lf; commandline -f repaint'
 
 # fish config
 function fish_greeting
-	# YADM
-	
-	# reload yadm files
-	yadm-reload
-	
-	set yadm_uncommited (yadm diff --numstat | wc -l)
-	if [ $yadm_uncommited -gt 0 ]
-		set yadm (set_color red) 'YADM' (set_color normal) ": $yadm_uncommited uncommited changes"
+	# PASS
+	set pass_uncommited (pass git diff origin/master --numstat | wc -l)
+	if [ $pass_uncommited -gt 0 ]
+		set pass (set_color red) 'pass' (set_color normal) ": $pass_uncommited uncommited changes"
 	else
-		set yadm (set_color green) 'YADM: OK' (set_color normal)
+		set pass (set_color green) 'pass: OK' (set_color normal)
+	end
+	
+	# YADM
+	set yadm_uncommited (yadm diff origin/master --numstat | wc -l)
+	if [ $yadm_uncommited -gt 0 ]
+		set yadm (set_color red) 'yadm' (set_color normal) ": $yadm_uncommited uncommited changes"
+	else
+		set yadm (set_color green) 'yadm: OK' (set_color normal)
 	end
 	
 	# PACUTIL
@@ -100,12 +104,15 @@ function fish_greeting
 	set pac_r (echo $pacutil | awk '{print $2}')
 	set pac_t (echo $pacutil | awk '{print $3}')
 	[ $pac_t = 0 ] && set pac_color green || set pac_color red
-	set pacutil (set_color $pac_color) 'PACUTIL:' (set_color green) $pac_i (set_color red) $pac_r (set_color normal) $pac_t
+	set pacutil (set_color $pac_color) 'pacutil:' (set_color green) $pac_i (set_color red) $pac_r (set_color normal) $pac_t
 	
 	if [ "$FISH_TOP" = no ]
 		set -x FISH_TOP yes
 		
 		cat .todo.md
+		echo
+		echo
+		echo $pass
 		echo
 		echo $yadm
 		echo
