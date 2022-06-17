@@ -37,7 +37,6 @@ set -x LESS       '-RS'
 set -x BAT_THEME  'TwoDark'
 
 # aliases
-alias dots='git --work-tree=$HOME --git-dir=$HOME/.dotfiles.git'
 alias tmux='tmux -2'
 alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
@@ -83,16 +82,36 @@ bind \cf 'lf; commandline -f repaint'
 
 # fish config
 function fish_greeting
+	# YADM
+	
+	# reload yadm files
+	yadm-reload
+	
 	set yadm_uncommited (yadm diff --numstat | wc -l)
 	if [ $yadm_uncommited -gt 0 ]
-		echo (set_color red) 'YADM' (set_color normal) ": $yadm_uncommited uncommited changes"
+		set yadm (set_color red) 'YADM' (set_color normal) ": $yadm_uncommited uncommited changes"
 	else
-		echo (set_color green) 'YADM: OK' (set_color normal)
+		set yadm (set_color green) 'YADM: OK' (set_color normal)
 	end
+	
+	# PACUTIL
+	set pacutil (pacutil number)
+	set pac_i (echo $pacutil | awk '{print $1}')
+	set pac_r (echo $pacutil | awk '{print $2}')
+	set pac_t (echo $pacutil | awk '{print $3}')
+	[ $pac_t = 0 ] && set pac_color green || set pac_color red
+	set pacutil (set_color $pac_color) 'PACUTIL:' (set_color green) $pac_i (set_color red) $pac_r (set_color normal) $pac_t
 	
 	if [ "$FISH_TOP" = no ]
 		set -x FISH_TOP yes
-		fortune -s | cowsay | lolcat
+		
+		cat .todo.md
+		echo
+		echo $yadm
+		echo
+		echo $pacutil
+		echo
+		fortune -s | lolcat
 		echo
 	end
 end
@@ -102,8 +121,18 @@ function fish_prompt
 	set -l suffix
 	set -l ssh
 	set -l fail
+	set -l vcs
 	[ $status = 0 ]         || set fail '!'
 	[ -n "$SSH_AGENT_PID" ] && set ssh  '#ssh'
+	
+	# vcs
+	set __fish_git_prompt_showdirtystate true
+	set vcs (fish_vcs_prompt)
+	# if [ -z "$vcs" ] && string match "$HOME" "$PWD"
+		
+	# end
+	[ -z "$vcs" ] || set vcs " $vcs"
+	
 	switch "$USER"
 		case root
 			if set -q fish_color_cwd_root
@@ -116,7 +145,7 @@ function fish_prompt
 			set color_cwd $fish_color_cwd
 			set suffix '>'
 	end
-	echo -n -s $USER (set_color blue) $ssh (set_color normal) ' ' (set_color $color_cwd) (prompt_pwd) (set_color red) $fail (set_color normal) $suffix ' '
+	echo -n -s $USER (set_color blue) $ssh (set_color normal) ' ' (set_color $color_cwd) (prompt_pwd) (set_color red) $fail $vcs (set_color normal) $suffix ' '
 end
 
 if [ -z "$FISH_TOP" ]

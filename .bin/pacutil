@@ -8,18 +8,45 @@ CLR_REMV="\e[31m"
 
 PKG_LIST="$HOME/.paclist"
 
+print_help() {
+	cat <<- 'EOS'
+	pacutil [CMD]
+
+	(i)nstall: list packages that need to be installed
+	(r)emove: list packages that need to be removed
+	(a)ll: both (i) and (r)
+	(l)ist: list configured packages and their number
+	(n)umber: print (i), (d), and (a) counts
+	EOS
+}
+
+action=a
+case "$1" in
+	i|install) action=i ;;
+	r|remove) action=r ;;
+	a|all) action=a ;;
+	l|list) action=l ;;
+	n|number) action=n ;;
+	*)
+		print_help
+		exit
+esac
+
+
 temp_list_target="$(mktemp)"
 temp_list_current="$(mktemp)"
 trap 'rm $temp_list_target $temp_list_current' EXIT
 
-yay -Qeq > "$temp_list_current"
+pacman -Qeq > "$temp_list_current"
 cat "$PKG_LIST" > "$temp_list_target"
 
-sed -i '/^#.*$/d'             "$temp_list_target"
-sed -i 's/#.*$//' "$temp_list_target"
-sed -i '/^[[:space:]]*$/d'    "$temp_list_target"
+# text processing to remove empty lines and comments
+sed -i '/^#.*$/d'                                         "$temp_list_target"
+sed -i 's/#.*$//'                                         "$temp_list_target"
+sed -i '/^[[:space:]]*$/d'                                "$temp_list_target"
 sed -i 's/[[:space:]]*\([A-Za-z0-9_-]*\)[[:space:]]*/\1/' "$temp_list_target"
 
+# sort both temp files
 sort -o "$temp_list_current" "$temp_list_current"
 sort -o "$temp_list_target" "$temp_list_target"
 if [ -n "$(uniq -D "$temp_list_target")" ]; then
@@ -31,30 +58,36 @@ if [ -n "$(uniq -D "$temp_list_target")" ]; then
 	exit 1
 fi
 
-action=a
-case "$1" in
-	i*) action=i ;;
-	r*) action=d ;;
-	l*) action=l ;;
-esac
+to_install="$(comm -23 "$temp_list_target" "$temp_list_current")"
+to_remove="$(comm -13 "$temp_list_target" "$temp_list_current")"
+
+install_count="$(echo "$to_install" | wc -l)"
+remove_count="$(echo "$to_remove" | wc -l)"
+total_count="$(expr $install_count + $remove_count)"
 
 if [ $action = l ]; then
 	cat "$temp_list_target"
 	wc -l "$temp_list_target" | awk '{print $1}'
 fi
 
+if [ $action = n ]; then
+	echo $install_count $remove_count $total_count
+fi
+
 if [ $action = a ] || [ $action = i ]; then
+	[ $action = a ] && \
 	printf "%b%s%b\n" \
 		"${CLR_RESET}${CLR_HEAD}" \
 		"Packages that need to be installed" \
 		"${CLR_RESET}${CLR_INST}"
-	comm -23 "$temp_list_target" "$temp_list_current"
+		echo "$to_install"
 fi
 
-if [ $action = a ] || [ $action = d ]; then
+if [ $action = a ] || [ $action = r ]; then
+	[ $action = a ] && \
 	printf "%b%s%b\n" \
 		"${CLR_RESET}${CLR_HEAD}" \
 		"Packages that need to be removed" \
 		"${CLR_RESET}${CLR_REMV}"
-	comm -13 "$temp_list_target" "$temp_list_current"
+		echo "$to_remove"
 fi

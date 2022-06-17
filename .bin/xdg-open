@@ -21,10 +21,6 @@ case "$MIME" in
 		id="$(echo "$files" | grep -n "$FILE" | cut -d: -f1)"
 		echo "$files" | orphan sxiv -a -i -n $id
 		exit ;;
-	
-	application/pdf)
-		orphan zathura "$FILE"
-		exit ;;
 esac
 
 # Handle externsion

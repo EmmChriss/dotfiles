@@ -1,0 +1,12 @@
+[Unit]
+Description=Sxhkd simple X hotkey daemon
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/sxhkd
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=xsession.target

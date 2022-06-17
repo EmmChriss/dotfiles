@@ -1,7 +1,5 @@
 [Added Associations]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-x-scheme-handler/http=xfce4-web-browser.desktop;
-x-scheme-handler/https=xfce4-web-browser.desktop;
+application/pdf=org.kde.okular.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-IBKVJ1.desktop;
 
 [Default Applications]
@@ -13,5 +11,5 @@ x-scheme-handler/unknown=opera.desktop
 video/x-matroska=vlc.desktop
 video/mp4=vlc.desktop
 x-scheme-handler/msteams=teams.desktop
-text/plain=sublime_text.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-IBKVJ1.desktop
+application/pdf=org.kde.okular.desktop
