@@ -109,9 +109,12 @@ function fish_greeting
 	if [ "$FISH_TOP" = no ]
 		set -x FISH_TOP yes
 		
-		cat .todo.md
-		echo
-		echo
+		if [ -f .todo.md ] && [ -s .todo.md ]
+			echo TODO:
+			mdcat .todo.md
+			echo
+			echo
+		end
 		echo $pass
 		echo
 		echo $yadm

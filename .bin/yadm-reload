@@ -1,6 +1,7 @@
 #!/bin/sh
 # adds files using glob patterns to yadm repo
 
+yadm encrypt
 yadm add .bin
 yadm add .Xresources
 yadm add .cargo/.crates.toml

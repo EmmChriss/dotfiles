@@ -21,4 +21,5 @@
     "cargo-sqlx",
     "sqlx",
 ]
+"trunk 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["trunk"]
 "vimv 1.7.5 (registry+https://github.com/rust-lang/crates.io-index)" = ["vimv"]

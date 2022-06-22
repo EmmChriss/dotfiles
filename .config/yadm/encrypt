@@ -1,6 +1,7 @@
-.aws/*
+.aws/**
 .gnupg/**
-.ssh/*
-.config/hcloud/*
+.ssh/**
+.config/hcloud/**
 .megaCmd/session
 .netrc
+.fly/**
