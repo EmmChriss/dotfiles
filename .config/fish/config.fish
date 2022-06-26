@@ -85,7 +85,8 @@ function fish_greeting
 	# PASS
 	set pass_uncommited (pass git diff origin/master --numstat | wc -l)
 	if [ $pass_uncommited -gt 0 ]
-		set pass (set_color red) 'pass' (set_color normal) ": $pass_uncommited uncommited changes"
+		set pass_datediff (datediff (pass git log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
+		set pass (set_color red) 'pass' (set_color normal) ": $pass_uncommited uncommited changes; last commit at $pass_datediff"
 	else
 		set pass (set_color green) 'pass: OK' (set_color normal)
 	end
@@ -93,7 +94,8 @@ function fish_greeting
 	# YADM
 	set yadm_uncommited (yadm diff origin/master --numstat | wc -l)
 	if [ $yadm_uncommited -gt 0 ]
-		set yadm (set_color red) 'yadm' (set_color normal) ": $yadm_uncommited uncommited changes"
+		set yadm_datediff (datediff (yadm log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
+		set yadm (set_color red) 'yadm' (set_color normal) ": $yadm_uncommited uncommited changes; last commit at $yadm_datediff"
 	else
 		set yadm (set_color green) 'yadm: OK' (set_color normal)
 	end
