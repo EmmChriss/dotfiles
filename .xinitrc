@@ -21,11 +21,6 @@ xrdb ~/.Xresources
 # setup prime offloading
 xrandr --setprovideroutputsource 1 0
 
-export _JAVA_OPTIONS='-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
-export _JAVA_AWT_WM_NONREPARENTING=1
-export SXHKD_SHELL='/bin/sh'
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
-
 export TERMINAL=alacritty
 export BROWSER=opera
 export EDITOR=hx

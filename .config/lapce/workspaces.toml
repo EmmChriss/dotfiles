@@ -1,4 +1,9 @@
 [[workspaces]]
 kind = "local"
+path = "/home/morga/Project/farm42/farm42-frontend"
+last_open = 1660205290
+
+[[workspaces]]
+kind = "local"
 path = "Project/metro2d"
 last_open = 1645511961

@@ -1,34 +1,24 @@
 # Environment
 
-# on login
-if status is-login && [ (tty) = '/dev/tty1' ]
-	echo "[0] Only AMD"
-	echo "[1] PRIME"
-	read -p "echo '(0) '" -n 1 answer
-	
-	if [ $answer = 1 ]
-		# PRIME
-		
-		# switch drivers
-		while lsmod | grep -q nouveau
-			sudo rmmod nouveau
-			sleep 1
-		end
-		lsmod | grep -q nvidia || sudo modprobe nvidia nvidia_uvm nvidia_modeset nvidia_drm
-		sudo nvidia-smi -pm 1
-	else
-		# AMD
-		
-		# switch drivers
-		while lsmod | grep -q nvidia
-			sudo nvidia-smi -pm 0
-			sudo rmmod nvidia nvidia_uvm nvidia_modeset nvidia_drm
-			sleep 1
-		end
-		lsmod | grep -q nouveau || sudo modprobe nouveau
-	end
-	
+set -x TERMINAL alacritty
+set -x BROWSER opera
+set -x EDITOR hx
+set -x VISUAL hx
+set -x PAGER less
+set -x OPERNER xdg-open
+
+set -x _JAVA_OPTIONS '-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+set -x SXHKD_SHELL '/bin/sh'
+set -x PATH "$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
+eval (dircolors -c | sed 's/setenv/set -x/')
+
+if status is-login && [ (tty) = '/dev/tty2' ]
 	exec startx
+end
+
+if status is-login && [ (tty) = '/dev/tty1' ]
+	exec Hyprland
 end
 
 # Preferences

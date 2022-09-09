@@ -35,7 +35,6 @@ asset_library/available_urls = {
 "godotengine.org (Official)": "https://godotengine.org/asset-library/api"
 }
 asset_library/use_threads = true
-projects/::home::morga::Project::Metro = "/home/morga/Project/Metro"
 export/android/android_sdk_path = ""
 export/android/debug_keystore = ""
 export/android/debug_keystore_user = "androiddebugkey"
@@ -134,3 +133,6 @@ editors/3d_gizmos/gizmo_colors/joint_body_a = Color( 0.6, 0.8, 1, 1 )
 editors/3d_gizmos/gizmo_colors/joint_body_b = Color( 0.6, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/function_definition_color = Color( 0.4, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/node_path_color = Color( 0.39, 0.76, 0.35, 1 )
+projects/::home::morga::Project::shipwrecked = "/home/morga/Project/shipwrecked"
+text_editor/help/sort_functions_alphabetically = true
+projects/::home::morga::Project::dicemaster = "/home/morga/Project/dicemaster"

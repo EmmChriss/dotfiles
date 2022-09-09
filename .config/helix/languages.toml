@@ -41,3 +41,12 @@ roots = ["sln", "csproj"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "\t" }
 language-server = { command = "omnisharp", args = [ "--languageserver", "--stdio" ], timeout = 1200 }
+
+[[language]]
+name = "java"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java"]
+roots = ["pom.xml", "build.gradle"]
+language-server = { command = "bash", args = ["jdtls"] }
+indent = { tab-width = 4, unit = "    " }

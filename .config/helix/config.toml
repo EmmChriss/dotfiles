@@ -2,6 +2,7 @@ theme = "onedark"
 
 [editor]
 mouse = false
+color-modes = true
 
 [editor.file-picker]
 hidden = false
@@ -10,7 +11,13 @@ hidden = false
 display-messages = true
 
 [editor.whitespace]
-render = { space = "none", tab = "all", newline = "none" }
+# render = { space = "none", tab = "all", newline = "none" }
+render = "none"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+# character = "│"
 
 [keys.normal]
 # swap yanking and non-yanking delete and change

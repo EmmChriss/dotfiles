@@ -7,3 +7,4 @@ ExecStart=/usr/bin/dunst
 
 [Install]
 WantedBy=xsession.target
+WantedBy=wsession.target
