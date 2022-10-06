@@ -2,8 +2,8 @@
 
 set -x TERMINAL alacritty
 set -x BROWSER opera
-set -x EDITOR hx
-set -x VISUAL hx
+set -x EDITOR helix
+set -x VISUAL helix
 set -x PAGER less
 set -x OPERNER xdg-open
 

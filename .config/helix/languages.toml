@@ -50,3 +50,13 @@ file-types = ["java"]
 roots = ["pom.xml", "build.gradle"]
 language-server = { command = "bash", args = ["jdtls"] }
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+injection-regex = "cpp"
+file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino"]
+roots = []
+comment-token = "//"
+language-server = { command = "clangd", args = ["--enable-config"] }
+indent = { tab-width = 2, unit = "  " }
