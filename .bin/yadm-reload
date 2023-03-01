@@ -2,6 +2,7 @@
 # adds files using glob patterns to yadm repo
 
 yadm encrypt
+yadm add .local/share/yadm/archive
 yadm add .bin
 yadm add .Xresources
 yadm add .cargo/.crates.toml
