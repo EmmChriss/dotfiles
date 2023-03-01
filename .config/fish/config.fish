@@ -1,7 +1,7 @@
 # Environment
 
 set -x TERMINAL alacritty
-set -x BROWSER opera
+set -x BROWSER librewolf
 set -x EDITOR helix
 set -x VISUAL helix
 set -x PAGER less
@@ -13,11 +13,23 @@ set -x SXHKD_SHELL '/bin/sh'
 set -x PATH "$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
 eval (dircolors -c | sed 's/setenv/set -x/')
 
-if status is-login && [ (tty) = '/dev/tty2' ]
+if status is-login && [ (tty) = '/dev/tty1' ]
+	# Ask to unload nvidia driver and replace it with nouveau for lower consumption
+	if lsmod | grep -q nvidia
+		read -P 'Unload nvidia? [y/N] ' -n1 yn
+		if [ (string lower $yn) = 'y' ]
+			while lsmod | grep -q nvidia
+				sudo rmmod nvidia nvidia_uvm nvidia_modeset nvidia_drm
+				sleep 1
+			end
+			sudo modprobe nouveau
+		end
+	end
+	
 	exec startx
 end
 
-if status is-login && [ (tty) = '/dev/tty1' ]
+if status is-login && [ (tty) = '/dev/tty2' ]
 	exec Hyprland
 end
 
@@ -31,6 +43,7 @@ alias tmux='tmux -2'
 alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
 alias ls='ls -lh --group-directories-first --color=auto'
+alias hx=helix
 
 alias gs='git status'
 alias gd='git diff'

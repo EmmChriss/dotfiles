@@ -1,6 +1,8 @@
 #!/bin/sh -u
 # updates monitor configuration
 
+DT_PRI='I II III IV V VI VII VIII IX X'
+DT_SEC='1 2 3 4 5 6 7 8 9 10'
 DT_ALL="$DT_PRI $DT_SEC"
 
 mons=$(mons)

@@ -7,7 +7,6 @@ yadm add .Xresources
 yadm add .cargo/.crates.toml
 yadm add .gitconfig
 yadm add .irssi/config
-yadm add .local/share/QuiteRss/QuiteRss/feeds.db
 yadm add .newsboat/urls
 yadm add .paclist
 yadm add .rustup/settings.toml
@@ -19,3 +18,4 @@ yadm add .readme.md
 yadm add .walls
 yadm add .xinitrc
 yadm add .config/{DIR_COLORS,alacritty,dunst,fish,fontconfig,gitui,gtk*,helix,htop,kak{,-lsp},lapce/*.toml,lf,mimeapps.list,mpd,ncmpcpp,picom.conf,polybar,rustfmt,sxhkd,systemd,tremc,yadm,yay,zathura}
+yadm commit -m $(date +%s)
