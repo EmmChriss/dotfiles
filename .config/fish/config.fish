@@ -15,16 +15,20 @@ eval (dircolors -c | sed 's/setenv/set -x/')
 
 if status is-login && [ (tty) = '/dev/tty1' ]
 	# Ask to unload nvidia driver and replace it with nouveau for lower consumption
-	if lsmod | grep -q nvidia
-		read -P 'Unload nvidia? [y/N] ' -n1 yn
-		if [ (string lower $yn) = 'y' ]
-			while lsmod | grep -q nvidia
-				sudo rmmod nvidia nvidia_uvm nvidia_modeset nvidia_drm
-				sleep 1
-			end
-			sudo modprobe nouveau
-		end
-	end
+	# WARNING: bug with nouveau fan control crashes system
+	# if lsmod | grep -q nvidia
+	# 	read -P 'Unload nvidia? [y/N] ' -n1 yn
+	# 	if [ (string lower $yn) = 'y' ]
+	# 		while lsmod | grep -q nvidia
+	# 			sudo rmmod nvidia nvidia_uvm nvidia_modeset nvidia_drm
+	# 			sleep 1
+	# 		end
+	# 		sudo modprobe nouveau
+	# 	end
+	# end
+
+	# For optimus-manager
+	sudo prime-switch
 	
 	exec startx
 end

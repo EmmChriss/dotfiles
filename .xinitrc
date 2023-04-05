@@ -19,7 +19,7 @@ numlockx &
 xrdb ~/.Xresources
 
 # setup prime offloading
-xrandr --setprovideroutputsource 1 0
+prime-offload
 
 export TERMINAL=alacritty
 export BROWSER=opera
