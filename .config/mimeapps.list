@@ -3,15 +3,15 @@ application/pdf=org.kde.okular.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-IBKVJ1.desktop;
 
 [Default Applications]
-x-scheme-handler/http=xfce4-web-browser.desktop
-x-scheme-handler/https=xfce4-web-browser.desktop
-x-scheme-handler/about=opera.desktop
-x-scheme-handler/webcal=opera.desktop
-x-scheme-handler/unknown=opera.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/webcal=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
 video/x-matroska=vlc.desktop
 video/mp4=vlc.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-IBKVJ1.desktop
-application/pdf=org.kde.okular.desktop
+application/pdf=librewolf.desktop
 x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_usr_lib_eclipse_.desktop
 x-scheme-handler/postman=Postman.desktop

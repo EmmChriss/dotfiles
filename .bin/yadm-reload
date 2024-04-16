@@ -1,6 +1,10 @@
 #!/bin/sh
 # adds files using glob patterns to yadm repo
 
+# export package list
+pacman -Qqen > ./config/yadm/arch
+pacman -Qqem > ./config/yadm/aur
+
 yadm encrypt
 yadm add .local/share/yadm/archive
 yadm add .bin
@@ -18,5 +22,5 @@ yadm add .todo.md
 yadm add .readme.md
 yadm add .walls
 yadm add .xinitrc
-yadm add .config/{DIR_COLORS,alacritty,dunst,fish,fontconfig,gitui,gtk*,helix,htop,kak{,-lsp},lapce/*.toml,lf,mimeapps.list,mpd,ncmpcpp,picom.conf,polybar,rustfmt,sxhkd,systemd,tremc,yadm,yay,zathura}
+yadm add .config/{DIR_COLORS,alacritty,dunst,fish,fontconfig,gitui,gtk*,helix,htop,hypr,kak{,-lsp},kickoff,lapce*.toml,lf,libresprite/palettes,lite-xl,nwg*,mimeapps.list,mpd,ncmpcpp,picom.conf,polybar,rustfmt,river,swappy,sxhkd,systemd,tremc,yadm,yay,tofi,waybar,zathura,bspwm,calibre,compton}
 yadm commit -m $(date +%s)

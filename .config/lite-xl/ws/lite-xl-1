@@ -1,0 +1,1 @@
+return { path = "/home/morga/.config/lite-xl", documents = {["type"]="leaf",["views"]={[1]={["filename"]="init.lua",["active"]=true,["type"]="doc",["text"]=false,["selection"]={[1]=12,[2]=1,[3]=12,[4]=1},["scroll"]={["y"]=0,["x"]=0}}},["active_view"]=1}, directories = {} }

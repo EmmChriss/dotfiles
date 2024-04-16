@@ -1,0 +1,1 @@
+return { path = "/home/morga/Project/lite-plugin-terminal", documents = {["type"]="leaf",["views"]={[1]={["selection"]={[1]=12,[2]=24,[3]=12,[4]=24},["active"]=false,["type"]="doc",["scroll"]={["x"]=0,["y"]=0},["filename"]="init.lua",["text"]=false}},["active_view"]=1}, directories = {} }

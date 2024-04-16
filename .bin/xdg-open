@@ -6,7 +6,7 @@ EXT="${FILE##*.}"
 [ -t 1 ] && TTY='yes' || TTY='no'
 
 orphan() {
-	{ "$@" & } &
+	{ nohup "$@" & } &>/dev/null </dev/null  &
 }
 
 # Handle links
@@ -16,16 +16,11 @@ esac
 
 # Handle mimetype
 case "$MIME" in
-	image/*)
-		files="$(find "$(dirname "$FILE")" -maxdepth 1 -type f | grep '\(png\|jpg\)$' | sort)"
-		id="$(echo "$files" | grep -n "$FILE" | cut -d: -f1)"
-		echo "$files" | orphan sxiv -a -i -n $id
-		exit ;;
+	image/*) orphan sxiv "$FILE" *; exit ;;
 esac
 
-# Handle externsion
+# Handle extension
 case "$EXT" in
-	torrent) orphan tremc $FILE; exit ;;
 esac
 
 # Open every txt file in EDITOR

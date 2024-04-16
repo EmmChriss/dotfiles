@@ -11,7 +11,8 @@ set -x _JAVA_OPTIONS '-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=on 
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 set -x SXHKD_SHELL '/bin/sh'
 set -x PATH "$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.bin:$HOME/.bin/desktop:$PATH"
-eval (dircolors -c | sed 's/setenv/set -x/')
+dircolors -c | sed 's/setenv/set -x/' | source
+fnm env | source
 
 if status is-login && [ (tty) = '/dev/tty1' ]
 	# Ask to unload nvidia driver and replace it with nouveau for lower consumption
@@ -31,10 +32,6 @@ if status is-login && [ (tty) = '/dev/tty1' ]
 	sudo prime-switch
 	
 	exec startx
-end
-
-if status is-login && [ (tty) = '/dev/tty2' ]
-	exec Hyprland
 end
 
 # Preferences

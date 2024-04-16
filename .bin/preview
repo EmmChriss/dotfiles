@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# don't preview over sshfs
 if [ -n "$id" ] && echo "$PWD" | grep -q 'sshfs'; then
 	lf -remote "send $id set nopreview"
 	lf -remote "send $id resize"

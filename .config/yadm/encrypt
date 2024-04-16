@@ -3,5 +3,12 @@
 .ssh/**
 .config/hcloud/**
 .megaCmd/session
+.megaCmd/excluded
+.megaCmd/syncs
+.newsboat/urls
+.pki/**
 .netrc
 .fly/**
+.docker/**
+.irssi
+.config/hcloud/**

@@ -1,0 +1,91 @@
+{
+  "about_get_books_msg_again": false,
+  "add books dialog dir": "/home/morga/Downloads",
+  "add books dialog dir-last-used-filter-spec-all-files": false,
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
+  "database location dialog": "/home/morga/Books/Calibre",
+  "device_delete_books_again": false,
+  "geometry-of-catalog_window_geom": {
+    "frame_geometry": {
+      "height": 1034,
+      "width": 1854,
+      "x": 33,
+      "y": 23
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 35,
+      "y": 25
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 35,
+      "y": 25
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAhAAAAFwAAB14AAAQgAAAAIwAAABkAAAdcAAAEHgAAAAAAAAAAB4AAAAAjAAAAGQAAB1wAAAQe"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "7.1",
+      "6.23",
+      "6.6",
+      "6.21"
+    ]
+  },
+  "sort_history": [
+    [
+      "ondevice",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "marked",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "kindle",
+  "welcome_wizard_was_run": true
+}

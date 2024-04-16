@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if pgrep -x Hyprland >/dev/null; then
+	hyprctl dispatch exit
+	sleep 10
+
+	if pgrep -x Hyprland >/dev/null; then
+		killall -9 Hyprland
+	fi
+fi

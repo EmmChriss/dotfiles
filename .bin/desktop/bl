@@ -29,5 +29,17 @@ elif test $# = '1'; then
 	exp=`echo "($next/100)+1" | bc -l`
 	val=`echo "(e($exp*l(10))-10)*100/90" | bc -l`
 	
-	xbacklight -set $val -steps 5
+	xbacklight -ctrl amdgpu_bl0 -set $val -steps 5
 fi
+
+# DEVICE=amdgpu_bl0
+# EXPONENT=4
+
+# if [ $# -eq 0 ]; then
+# 	brightnessctl --exponent=$EXPONENT --device=$DEVICE -m | cut -d, -f4 | grep -Eo [[:digit:]]+ 
+# elif [ $# -eq 1 ]; then
+# 	op="$(echo $1 | grep -Eo '[+-]' | head -n1)"
+# 	amount="$(echo $1 | grep -Eo '[[:digit:]]+' | head -n1)"
+	
+# 	brightnessctl --exponent=$EXPONENT --device=$DEVICE -m set "$amount%$op" | cut -d, -f4 | grep -Eo [[:digit:]]+
+# fi

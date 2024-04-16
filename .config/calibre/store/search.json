@@ -1,0 +1,181 @@
+{
+  "cache_thread_count": 2,
+  "config_dialog_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAIQAAAAiAAABS8AAALfAAACEAAAAIgAAAUvAAAC3wAAAAAAAAAAB4AAAAIQAAAAiAAABS8AAALf"
+  },
+  "config_dialog_tab_index": 1,
+  "cover_thread_count": 2,
+  "details_thread_count": 4,
+  "first_run": false,
+  "geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAH2AAAAqwAAB14AAAQ7AAAB9gAAAKsAAAdeAAAEOwAAAAAAAAAAB4AAAAH2AAAAqwAAB14AAAQ7"
+  },
+  "geometry-of-config_dialog_geometry": {
+    "frame_geometry": {
+      "height": 604,
+      "width": 804,
+      "x": 556,
+      "y": 236
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 600,
+      "width": 800,
+      "x": 558,
+      "y": 238
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 600,
+      "width": 800,
+      "x": 558,
+      "y": 238
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAIsAAAA7AAABU8AAANHAAACLgAAAO4AAAVNAAADRQAAAAAAAAAAB4AAAAIuAAAA7gAABU0AAANF"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "",
+      "name": "eDP-1-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-geometry": {
+    "frame_geometry": {
+      "height": 623,
+      "width": 1200,
+      "x": 360,
+      "y": 228
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 619,
+      "width": 1196,
+      "x": 362,
+      "y": 230
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 619,
+      "width": 1196,
+      "x": 362,
+      "y": 230
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAFoAAAA5AAABhcAAANSAAABagAAAOYAAAYVAAADUAAAAAEAAAAAB4AAAAFqAAAA5gAABhUAAANQ"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 1,
+      "manufacturer": "Philips Consumer Electronics Company",
+      "model": "PHL 273V7",
+      "name": "HDMI-0",
+      "serial": "3982",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "hang_time": 75,
+  "max_results": 10,
+  "open_external": true,
+  "results_view_column_width": [
+    85,
+    416,
+    61,
+    77,
+    152,
+    86,
+    185
+  ],
+  "search_thread_count": 4,
+  "sort_col": 2,
+  "sort_order": 0,
+  "store_checked": {
+    "Amazon AU Kindle": true,
+    "Amazon CA Kindle": true,
+    "Amazon DE Kindle": true,
+    "Amazon ES Kindle": true,
+    "Amazon FR Kindle": true,
+    "Amazon IN Kindle": true,
+    "Amazon IT Kindle": true,
+    "Amazon Kindle": true,
+    "Amazon UK Kindle": true,
+    "Archive.org": true,
+    "Baen Ebooks": true,
+    "Barnes and Noble": true,
+    "Beam EBooks DE": true,
+    "Bubok Portugal": true,
+    "Bubok Spain": true,
+    "Ebookpoint": true,
+    "EbooksGratuits.com": true,
+    "Empik": true,
+    "Feedbooks": true,
+    "Google Books": true,
+    "Kobo": true,
+    "Legimi": true,
+    "LitRes": true,
+    "ManyBooks": true,
+    "Mills and Boon UK": true,
+    "MobileRead": true,
+    "Nexto": true,
+    "Pragmatic Bookshelf": true,
+    "Project Gutenberg": true,
+    "Publio": true,
+    "RW2010": true,
+    "Smashwords": true,
+    "Virtualo": true,
+    "Weightless Books": true,
+    "Woblink": true,
+    "Wolne Lektury": true,
+    "eBook.nl": true,
+    "eBooks.com": true,
+    "ebook.de": true,
+    "Świat Ebooków": true,
+    "Библио.бг": true,
+    "Моята библиотека": true
+  },
+  "store_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAAATAAAATUB/////wEAAAABAA=="
+  },
+  "timeout": 75
+}

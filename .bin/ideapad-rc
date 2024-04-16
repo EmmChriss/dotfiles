@@ -7,7 +7,7 @@ function usage() {
 }
 
 function until_perc() {
-	trap 'ideapad-cm enable' 0 
+	trap 'ideapad-cm enable' EXIT 
 	
 	target_perc="$1"
 	while :; do

@@ -1,0 +1,13 @@
+{
+  "authorMatch": "fuzzy",
+  "authorSoundexLength": 8,
+  "autoDeleteBinaryDups": false,
+  "identifierType": "mobi-asin",
+  "includeLanguages": false,
+  "searchType": "titleauthor",
+  "showAllGroups": true,
+  "showTagAuthor": true,
+  "sortGroupsByTitle": true,
+  "titleMatch": "fuzzy",
+  "titleSoundexLength": 6
+}

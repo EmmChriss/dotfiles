@@ -17,3 +17,5 @@
 	rebase = true
 [rebase]
 	autoStash = true
+[safe]
+	directory = /home/morga/.cache/yay/auto-cpufreq/src/opt/auto-cpufreq/

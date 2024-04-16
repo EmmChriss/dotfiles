@@ -1,0 +1,1 @@
+lite-xl-plugins/plugins/extend_selection_line.lua

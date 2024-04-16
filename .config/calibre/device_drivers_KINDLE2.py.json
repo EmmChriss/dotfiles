@@ -1,0 +1,26 @@
+{
+  "extra_customization": [
+    true,
+    "fast",
+    "",
+    "",
+    true
+  ],
+  "format_map": [
+    "azw",
+    "azw3",
+    "mobi",
+    "prc",
+    "azw1",
+    "tpz",
+    "azw4",
+    "kfx",
+    "pobi",
+    "pdf",
+    "txt"
+  ],
+  "read_metadata": true,
+  "save_template": "{author_sort}/{title} - {authors}",
+  "use_author_sort": false,
+  "use_subdirs": true
+}

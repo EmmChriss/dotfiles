@@ -1,0 +1,92 @@
+{
+  "entries": {
+    "pdf": [
+      {
+        "Actions": "ChooseInstance;NonUniqueInstance;",
+        "Categories": "Viewer;Office;",
+        "Comment": "A tabbed document viewer using Qt and the Poppler library.",
+        "Exec": [
+          "qpdfview",
+          "--unique",
+          "%F"
+        ],
+        "GenericName": "tabbed document viewer",
+        "Icon": "/usr/share/icons/hicolor/scalable/apps/qpdfview.svg",
+        "Keywords": "viewer;document;presentation;pdf;ps;djvu;",
+        "MimeType": [
+          "",
+          "image/x-djvu",
+          "application/pdf",
+          "text/x-pdf",
+          "application/postscript",
+          "text/pdf",
+          "image/pdf",
+          "application/x-pdf",
+          "image/x-pdf",
+          "image/vnd.djvu"
+        ],
+        "Name": "qpdfview",
+        "Terminal": "false",
+        "TryExec": "qpdfview",
+        "Type": "Application",
+        "desktop_file_path": "/usr/share/applications/qpdfview.desktop",
+        "icon_data": {
+          "__class__": "bytearray",
+          "__value__": "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"
+        },
+        "uuid": "5243055d-ebf1-468e-9e96-3b68f41255e7"
+      }
+    ]
+  },
+  "geometry-of-choose-open-with-program-dialog-geometry": {
+    "frame_geometry": {
+      "height": 504,
+      "width": 604,
+      "x": 658,
+      "y": 288
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 500,
+      "width": 600,
+      "x": 660,
+      "y": 290
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 500,
+      "width": 600,
+      "x": 660,
+      "y": 290
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAKSAAABIAAABO0AAAMXAAAClAAAASIAAATrAAADFQAAAAAAAAAAB4AAAAKUAAABIgAABOsAAAMV"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "",
+      "name": "eDP-1-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  }
+}

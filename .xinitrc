@@ -28,13 +28,3 @@ export VISUAL=hx
 export PAGER=less
 export OPERNER=xdg-open
 eval $(dircolors $HOME/.config/DIR_COLORS)
-
-# pass some env vars to systemd
-systemctl --user import-environment PATH DISPLAY XAUTHORITY DBUS_SESSION_BUS_ADDRESS LS_COLORS SXHKD_SHELL _JAVA_AWT_WM_NONREPARENTING _JAVA_OPTIONS \
-  TERMINAL BROWSER EDITOR VISUAL PAGER OPENER
-
-# trigger graphical.target
-systemctl --user --no-block start xsession.target
-
-# start stuff
-bspwm

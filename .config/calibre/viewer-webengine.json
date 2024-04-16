@@ -1,0 +1,215 @@
+{
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1032,
+      "width": 954,
+      "x": 4,
+      "y": 24
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1028,
+      "width": 950,
+      "x": 6,
+      "y": 26
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1028,
+      "width": 950,
+      "x": 6,
+      "y": 26
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAEAAAAGAAAA70AAAQfAAAABgAAABoAAAO7AAAEHQAAAAAAAAAAB4AAAAAGAAAAGgAAA7sAAAQd"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "",
+      "name": "eDP",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "main_window_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAAAAAAAAAAAA64AAAQHAAAAAAAAAAAAAAOuAAAEBwAAAAAAAAAAB4AAAAAAAAAAAAAAA64AAAQH"
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACEAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANIA////AAADtgAABAQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "controls_help_shown_count": 2,
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_last_read": true,
+      "remember_window_geometry": false,
+      "save_annotations_in_ebook": true,
+      "singleinstance": false
+    },
+    "standalone_recently_opened": [
+      {
+        "key": "/home/morga/Books/Calibre/Unknown/2310.16836 (56)/2310.16836 - Unknown.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Unknown/2310.16836 (56)/2310.16836 - Unknown.mobi",
+        "timestamp": "2023-11-24T14:43:02.790Z",
+        "title": "2310.16836"
+      },
+      {
+        "key": "/home/morga/Books/Calibre/Unknown/2310.11453 (57)/2310.11453 - Unknown.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Unknown/2310.11453 (57)/2310.11453 - Unknown.mobi",
+        "timestamp": "2023-11-24T14:41:14.411Z",
+        "title": "2310.11453"
+      },
+      {
+        "authors": [
+          "Holly Black"
+        ],
+        "key": "/home/morga/Books/Calibre/Holly Black/The Cruel Prince (The Folk of the Air) (47)/The Cruel Prince (The Folk of the Air) - Holly Black.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Holly Black/The Cruel Prince (The Folk of the Air) (47)/The Cruel Prince (The Folk of the Air) - Holly Black.mobi",
+        "timestamp": "2023-10-18T20:37:32.328Z",
+        "title": "The Cruel Prince (The Folk of the Air)"
+      },
+      {
+        "authors": [
+          "Victor E. Frankl"
+        ],
+        "key": "/home/morga/Books/Calibre/Victor E. Frankl/Man's Search For Meaning (43)/Man's Search For Meaning - Victor E. Frankl.pdf",
+        "pathtoebook": "/home/morga/Books/Calibre/Victor E. Frankl/Man's Search For Meaning (43)/Man's Search For Meaning - Victor E. Frankl.pdf",
+        "timestamp": "2023-03-21T08:06:11.284Z",
+        "title": "Man's Search For Meaning"
+      },
+      {
+        "authors": [
+          "Daan Leijen"
+        ],
+        "key": "/home/morga/Books/Calibre/Daan Leijen/Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21 (27)/Structured Asynchrony with Algebraic Effec - Daan Leijen.pdf",
+        "pathtoebook": "/home/morga/Books/Calibre/Daan Leijen/Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21 (27)/Structured Asynchrony with Algebraic Effec - Daan Leijen.pdf",
+        "timestamp": "2023-03-20T21:06:11.331Z",
+        "title": "Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21"
+      },
+      {
+        "key": "/home/morga/Books/Calibre/Unknown/Fahrenheit-451 (42)/Fahrenheit-451 - Unknown.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Unknown/Fahrenheit-451 (42)/Fahrenheit-451 - Unknown.mobi",
+        "timestamp": "2023-03-20T21:05:12.091Z",
+        "title": "Fahrenheit-451"
+      },
+      {
+        "key": "/tmp/calibre_6.14.1_tmp_m19kgtj3/m3tx93pg_view_device_book.mobi",
+        "pathtoebook": "/tmp/calibre_6.14.1_tmp_m19kgtj3/m3tx93pg_view_device_book.mobi",
+        "timestamp": "2023-03-20T21:03:07.906Z",
+        "title": "Fahrenheit-451"
+      },
+      {
+        "authors": [
+          "Laozi"
+        ],
+        "key": "/home/morga/Books/Calibre/Laozi/The Tao Teh King, or the Tao and its Characteristics (40)/The Tao Teh King, or the Tao and its Chara - Laozi.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Laozi/The Tao Teh King, or the Tao and its Characteristics (40)/The Tao Teh King, or the Tao and its Chara - Laozi.mobi",
+        "timestamp": "2022-12-01T15:24:26.857Z",
+        "title": "The Tao Teh King, or the Tao and its Characteristics"
+      },
+      {
+        "authors": [
+          "speed8"
+        ],
+        "key": "/home/morga/Books/Calibre/speed8/ewd215 (36)/ewd215 - speed8.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/speed8/ewd215 (36)/ewd215 - speed8.mobi",
+        "timestamp": "2022-12-01T15:20:54.698Z",
+        "title": "ewd215"
+      },
+      {
+        "authors": [
+          "Mihaly Csikszentmihalyi"
+        ],
+        "key": "/tmp/calibre_6.6.1_tmp_ahq8i9ci/phis0y7n_view_device_book.azw3",
+        "pathtoebook": "/tmp/calibre_6.6.1_tmp_ahq8i9ci/phis0y7n_view_device_book.azw3",
+        "timestamp": "2022-10-12T10:55:35.865Z",
+        "title": "Flow"
+      },
+      {
+        "authors": [
+          "Mihaly Csikszentmihalyi"
+        ],
+        "key": "/home/morga/Books/Calibre/Mihaly Csikszentmihalyi/Flow (34)/Flow - Mihaly Csikszentmihalyi.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Mihaly Csikszentmihalyi/Flow (34)/Flow - Mihaly Csikszentmihalyi.mobi",
+        "timestamp": "2022-09-30T17:57:54.699Z",
+        "title": "Flow"
+      },
+      {
+        "authors": [
+          "speed8"
+        ],
+        "key": "/home/morga/Books/Calibre/Donald Knuth/A Case Against the GoTo Statement (26)/A Case Against the GoTo Statement - Donald Knuth.epub",
+        "pathtoebook": "/home/morga/Books/Calibre/Donald Knuth/A Case Against the GoTo Statement (26)/A Case Against the GoTo Statement - Donald Knuth.epub",
+        "timestamp": "2022-09-30T10:30:43.688Z",
+        "title": "ewd215"
+      },
+      {
+        "authors": [
+          "Daan Leijen"
+        ],
+        "key": "/home/morga/Books/Calibre/Daan Leijen/Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21 (27)/Structured Asynchrony with Algebraic Effec - Daan Leijen.epub",
+        "pathtoebook": "/home/morga/Books/Calibre/Daan Leijen/Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21 (27)/Structured Asynchrony with Algebraic Effec - Daan Leijen.epub",
+        "timestamp": "2022-09-30T10:29:51.036Z",
+        "title": "Structured Asynchrony with Algebraic EffectsMicrosoft Technical report, MSR-TR-2017-21"
+      },
+      {
+        "authors": [
+          "Fyodor Dostoyevsky"
+        ],
+        "key": "/home/morga/Books/Calibre/Fyodor Dostoyevsky/The Possessed (The Devils) (29)/The Possessed (The Devils) - Fyodor Dostoyevsky.mobi",
+        "pathtoebook": "/home/morga/Books/Calibre/Fyodor Dostoyevsky/The Possessed (The Devils) (29)/The Possessed (The Devils) - Fyodor Dostoyevsky.mobi",
+        "timestamp": "2022-09-30T10:29:32.935Z",
+        "title": "The Possessed (The Devils)"
+      },
+      {
+        "authors": [
+          "Peter Seibel"
+        ],
+        "key": "/home/morga/Books/Calibre/Peter Seibel/Practical Common Lisp (28)/Practical Common Lisp - Peter Seibel.azw3",
+        "pathtoebook": "/home/morga/Books/Calibre/Peter Seibel/Practical Common Lisp (28)/Practical Common Lisp - Peter Seibel.azw3",
+        "timestamp": "2022-09-30T10:29:08.010Z",
+        "title": "Practical Common Lisp"
+      },
+      {
+        "authors": [
+          "John Dinsmore"
+        ],
+        "key": "/home/morga/Books/Calibre/John Dinsmore/ZERO-3M.WithCover.R2.FINAL (3)/ZERO-3M.WithCover.R2.FINAL - John Dinsmore.epub",
+        "pathtoebook": "/home/morga/Books/Calibre/John Dinsmore/ZERO-3M.WithCover.R2.FINAL (3)/ZERO-3M.WithCover.R2.FINAL - John Dinsmore.epub",
+        "timestamp": "2022-09-30T10:10:39.380Z",
+        "title": "ZERO-3M.WithCover.R2.FINAL"
+      },
+      {
+        "authors": [
+          "speed8"
+        ],
+        "key": "/home/morga/Books/Calibre/speed8/ewd215 (26)/ewd215 - speed8.epub",
+        "pathtoebook": "/home/morga/Books/Calibre/speed8/ewd215 (26)/ewd215 - speed8.epub",
+        "timestamp": "2022-09-30T10:09:41.950Z",
+        "title": "ewd215"
+      }
+    ]
+  }
+}
