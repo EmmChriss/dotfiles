@@ -12,4 +12,4 @@
 .docker/**
 .irssi
 .config/hcloud/**
-.rclone/**
+.config/rclone/**
