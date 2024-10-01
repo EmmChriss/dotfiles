@@ -6,21 +6,21 @@ pacman -Qqen > ./config/yadm/arch
 pacman -Qqem > ./config/yadm/aur
 
 yadm encrypt
-yadm add .local/share/yadm/archive
-yadm add .bin
-yadm add .Xresources
-yadm add .cargo/.crates.toml
-yadm add .gitconfig
-yadm add .irssi/config
-yadm add .newsboat/urls
-yadm add .paclist
-yadm add .rustup/settings.toml
-yadm add .terminfo
-yadm add .theme
-yadm add .tmux.conf
-yadm add .todo.md
-yadm add .readme.md
-yadm add .walls
-yadm add .xinitrc
-yadm add .config/{DIR_COLORS,alacritty,dunst,fish,fontconfig,gitui,gtk*,helix,htop,hypr,kak{,-lsp},kickoff,lapce*.toml,lf,libresprite/palettes,lite-xl,nwg*,mimeapps.list,mpd,ncmpcpp,picom.conf,polybar,rustfmt,river,swappy,sxhkd,systemd,tremc,yadm,yay,tofi,waybar,zathura,bspwm,calibre,compton}
-yadm commit -m $(date +%s)
+yadm add -f .local/share/yadm/archive
+yadm add -f .bin
+yadm add -f .Xresources
+yadm add -f .cargo/.crates.toml
+yadm add -f .gitconfig
+yadm add -f .irssi/config
+yadm add -f .newsboat/urls
+yadm add -f .paclist
+yadm add -f .rustup/settings.toml
+yadm add -f .terminfo
+yadm add -f .theme
+yadm add -f .tmux.conf
+yadm add -f .todo.md
+yadm add -f .readme.md
+yadm add -f .walls
+yadm add -f .xinitrc
+yadm add -f .config/{DIR_COLORS,alacritty,dunst,fish,fontconfig,gitui,gtk*,helix,htop,hypr,kak{,-lsp},kickoff,lapce*.toml,lf,libresprite/palettes,lite-xl,nwg*,mimeapps.list,mpd,ncmpcpp,picom.conf,polybar,rustfmt,river,swappy,sxhkd,systemd,tremc,yadm,yay,tofi,waybar,zathura,bspwm,calibre,compton}
+yadm commit -m "$(date)"

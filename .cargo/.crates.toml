@@ -1,0 +1,11 @@
+[v1]
+"cargo-watch 8.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-watch"]
+"dioxus-cli 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)" = ["dx"]
+"flamegraph 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)" = [
+    "cargo-flamegraph",
+    "flamegraph",
+]
+"sqlx-cli 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = [
+    "cargo-sqlx",
+    "sqlx",
+]

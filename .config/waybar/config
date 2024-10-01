@@ -23,8 +23,8 @@
             "5:music": "",
             "6:docs": "",
             "urgent": "",
-            "empty": "",
-            "active": "⬤",
+            "empty": "⬤",
+            "active": "",
             "default": "",
         }
     },
