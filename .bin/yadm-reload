@@ -6,6 +6,7 @@ pacman -Qqen > ~/.config/yadm/arch
 pacman -Qqem > ~/.config/yadm/aur
 
 yadm encrypt
+yadm add -f .librewolf/librewolf.overrides.cfg
 yadm add -f .local/share/yadm/archive
 yadm add -f .bin
 yadm add -f .Xresources
