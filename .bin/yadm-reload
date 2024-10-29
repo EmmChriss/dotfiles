@@ -2,8 +2,8 @@
 # adds files using glob patterns to yadm repo
 
 # export package list
-pacman -Qqen > ./config/yadm/arch
-pacman -Qqem > ./config/yadm/aur
+pacman -Qqen > ~/.config/yadm/arch
+pacman -Qqem > ~/.config/yadm/aur
 
 yadm encrypt
 yadm add -f .local/share/yadm/archive
