@@ -7,6 +7,9 @@ set -x VISUAL helix
 set -x PAGER less
 set -x OPERNER xdg-open
 
+set -x NODE_OPTIONS --max-old-space-size=1024
+set -x CRYPTOGRAPHY_OPENSSL_NO_LEGACY 1
+set -x JAVA_HOME /usr/lib/jvm/default/
 set -x _JAVA_OPTIONS '-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 set -x SXHKD_SHELL /bin/sh
@@ -15,8 +18,8 @@ dircolors -c | sed 's/setenv/set -x/' | source
 fnm env | source
 
 if status is-login && [ (tty) = /dev/tty1 ]
-    # Ask to unload nvidia driver and replace it with nouveau for lower consumption
     # WARNING: bug with nouveau fan control crashes system
+    # Ask to unload nvidia driver and replace it with nouveau for lower consumption
     # if lsmod | grep -q nvidia
     # 	read -P 'Unload nvidia? [y/N] ' -n1 yn
     # 	if [ (string lower $yn) = 'y' ]
@@ -57,6 +60,8 @@ alias sush="sudo -s"
 
 alias bt="bluetoothctl"
 
+[ -f /opt/miniconda3/etc/fish/conf.d/conda.fish ] && source /opt/miniconda3/etc/fish/conf.d/conda.fish
+
 # lf alias
 
 function lf -w lf
@@ -86,31 +91,45 @@ bind \cf 'lf; commandline -f repaint'
 
 # fish config
 function fish_greeting
+    [ $FISH_TOP = no ] || return
+
     # PASS
-    set pass_uncommited (pass git diff origin/master --numstat | wc -l)
-    if [ $pass_uncommited -gt 0 ]
-        set pass_datediff (datediff (pass git log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
-        set pass (set_color red) pass (set_color normal) ": $pass_uncommited uncommited changes; last commit at $pass_datediff"
-    else
-        set pass (set_color green) 'pass: OK' (set_color normal)
+    if [ -z $pass ]
+        set pass_uncommited (pass git diff origin/master --numstat | wc -l)
+        if [ $pass_uncommited -gt 0 ]
+            set pass_datediff (datediff (pass git log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
+            set pass (set_color red) pass (set_color normal) ": $pass_uncommited uncommited changes; last commit at $pass_datediff"
+        else
+            set pass (set_color green) 'pass: OK' (set_color normal)
+        end
     end
 
     # YADM
-    set yadm_uncommited (yadm diff origin/master --numstat | wc -l)
-    if [ $yadm_uncommited -gt 0 ]
-        set yadm_datediff (datediff (yadm log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
-        set yadm (set_color red) yadm (set_color normal) ": $yadm_uncommited uncommited changes; last commit at $yadm_datediff"
-    else
-        set yadm (set_color green) 'yadm: OK' (set_color normal)
+    set path /tmp/fish_greeting_yadm
+    [ -f $path ] && set yadm (cat $path)
+    if [ -z $yadm ]
+        set yadm_uncommited (yadm diff origin/master --numstat | wc -l)
+        if [ $yadm_uncommited -gt 0 ]
+            set yadm_datediff (datediff (yadm log -1 --format=%at) now -i '%s' -f '%d days, %H hours')
+            set yadm (set_color red) yadm (set_color normal) ": $yadm_uncommited uncommited changes; last commit at $yadm_datediff"
+        else
+            set yadm (set_color green) 'yadm: OK' (set_color normal)
+        end
     end
+    [ -f $path ] || echo $yadm >$path
 
     # PACUTIL
-    set pacutil (pacutil number)
-    set pac_i (echo $pacutil | awk '{print $1}')
-    set pac_r (echo $pacutil | awk '{print $2}')
-    set pac_t (echo $pacutil | awk '{print $3}')
-    [ $pac_t = 0 ] && set pac_color green || set pac_color red
-    set pacutil (set_color $pac_color) 'pacutil:' (set_color green) $pac_i (set_color red) $pac_r (set_color normal) $pac_t
+    set path /tmp/fish_greeting_pacutil
+    [ -f $path ] && set pacutil (cat $path)
+    if [ -z $pacutil ]
+        set pacutil (pacutil number)
+        set pac_i (echo $pacutil | awk '{print $1}')
+        set pac_r (echo $pacutil | awk '{print $2}')
+        set pac_t (echo $pacutil | awk '{print $3}')
+        [ $pac_t = 0 ] && set pac_color green || set pac_color red
+        set pacutil (set_color $pac_color) 'pacutil:' (set_color green) $pac_i (set_color red) $pac_r (set_color normal) $pac_t
+    end
+    [ -f $path ] || echo $pacutil >$path
 
     if [ "$FISH_TOP" = no ]
         set -x FISH_TOP yes
