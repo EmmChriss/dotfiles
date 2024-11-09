@@ -48,6 +48,7 @@ alias ssh='env TERM=xterm-color ssh'
 alias cli-ref='curl -s "http://pastebin.com/raw/yGmGiDQX" | less -i'
 alias ls='ls -lh --group-directories-first --color=auto'
 alias hx=helix
+alias http=xh
 
 alias gs='git status'
 alias gd='git diff'

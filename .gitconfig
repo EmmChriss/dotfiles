@@ -1,21 +1,18 @@
+[core]
+	editor = helix
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictstyle = zdiff3
 [user]
 	name = EmmChriss
 	email = emmchris@protonmail.com
-[core]
-	editor = helix
-[alias]
-	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
-[filter "tabspace"]
-	smudge = unexpand --tabs=4 --first-only
-	clean = expand --tabs=4 --initial
-[filter "tabspace2"]
-	smudge = unexpand --tabs=2 --first-only
-	clean = expand --tabs=2 --initial
 [format]
 	pretty = oneline
 [pull]
 	rebase = true
 [rebase]
 	autoStash = true
-[safe]
-	directory = /home/morga/.cache/yay/auto-cpufreq/src/opt/auto-cpufreq/

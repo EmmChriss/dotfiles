@@ -38,6 +38,7 @@ cmake
 cmatrix
 colord
 cowsay
+cppzmq
 cuda
 cudnn
 cups
@@ -68,10 +69,10 @@ gawk
 gcc
 gdb
 gettext
-ghc
 gimagereader-gtk
 gimp
 git
+git-delta
 gitui
 gnu-netcat
 godot
@@ -90,7 +91,6 @@ hashcat-utils
 helix
 highlight
 htop
-httpie
 hugo
 hyperfine
 hypridle
@@ -101,14 +101,12 @@ imagemagick
 imath
 inkscape
 inotify-tools
-intellij-idea-community-edition
 iotop
 ipp-usb
 ipython
 iw
 iwd
 jdk-openjdk
-jdk11-openjdk
 jless
 jq
 jupyter-nbclassic
@@ -181,14 +179,15 @@ nix-docs
 ntfs-3g
 nvidia
 nvidia-settings
+nvtop
 nwg-clipman
 nwg-displays
 nwg-icon-picker
 nwg-look
 nwg-panel
 obs-studio
-octave
 ollama-cuda
+onednn
 onetbb
 openblas
 opencl-nvidia
@@ -493,6 +492,7 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xf86-video-amdgpu
 xfsprogs
+xh
 xorg-bdftopcf
 xorg-docs
 xorg-font-util

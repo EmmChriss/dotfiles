@@ -5,6 +5,10 @@
     "cargo-flamegraph",
     "flamegraph",
 ]
+"sea-orm-cli 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = [
+    "sea",
+    "sea-orm-cli",
+]
 "sqlx-cli 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = [
     "cargo-sqlx",
     "sqlx",

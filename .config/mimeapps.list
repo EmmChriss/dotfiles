@@ -15,3 +15,7 @@ x-scheme-handler/tg=userapp-Telegram Desktop-IBKVJ1.desktop
 application/pdf=librewolf.desktop
 x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_usr_lib_eclipse_.desktop
 x-scheme-handler/postman=Postman.desktop
+application/x-bittorrent=tixati.desktop
+x-scheme-handler/magnet=tixati.desktop
+x-scheme-handler/dsc=tixati.desktop
+application/x-magnet=tixati.desktop

@@ -16,7 +16,6 @@ gopsuinfo-debug
 heroku-cli-bin
 ideapad-cm
 js78
-julia-bin
 jupyter-server-ydoc
 ldtk
 lf-bin
@@ -30,8 +29,6 @@ ngrok
 nohang
 nwg-bar-bin
 nwg-dock-hyprland-bin
-octave-nan
-octave-statistics
 optimus-manager
 pass-update
 payload-dumper-go-bin
@@ -49,10 +46,10 @@ revanced-cli-bin
 sddm-sugar-candy-git
 swaync-debug
 teams
+tixati
 tofi
 typora
 upass
 uresourced
-webcord
 yay-bin
 zigmod-bin
