@@ -75,8 +75,8 @@ git
 git-delta
 gitui
 gnu-netcat
+go-task
 godot
-gopsuinfo
 gptfdisk
 graphviz
 grep
@@ -109,6 +109,8 @@ iwd
 jdk-openjdk
 jless
 jq
+js128
+jupyter-collaboration
 jupyter-nbclassic
 jupyter-nbclient
 jupyter-nbconvert
@@ -136,8 +138,6 @@ libpwquality
 libreoffice-still
 libtool
 libtorrent-rasterbar
-libva-mesa-driver
-libva-vdpau-driver
 libxml2
 libxslt
 lilv
@@ -161,7 +161,6 @@ mathjax
 mdbook
 mdcat
 mesa-demos
-mesa-vdpau
 meson
 mosh
 mpc
@@ -180,8 +179,11 @@ ntfs-3g
 nvidia
 nvidia-settings
 nvtop
+nwg-bar
 nwg-clipman
 nwg-displays
+nwg-dock-hyprland
+nwg-drawer
 nwg-icon-picker
 nwg-look
 nwg-panel

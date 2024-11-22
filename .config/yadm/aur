@@ -9,17 +9,13 @@ downgrade
 dragon-drop
 duckdb-bin
 flamegraph
-flyctl-bin
+flyctl
 fnm-bin
 google-chrome
-gopsuinfo-debug
 heroku-cli-bin
 ideapad-cm
-js78
-jupyter-server-ydoc
 ldtk
 lf-bin
-libresprite-appimage
 librewolf-bin
 llvm15
 megacmd
@@ -27,8 +23,6 @@ miniconda3
 mons
 ngrok
 nohang
-nwg-bar-bin
-nwg-dock-hyprland-bin
 optimus-manager
 pass-update
 payload-dumper-go-bin
@@ -43,8 +37,6 @@ python-pyrsistent
 python-webio-jupyter-extension
 qpdfview
 revanced-cli-bin
-sddm-sugar-candy-git
-swaync-debug
 teams
 tixati
 tofi
@@ -52,4 +44,3 @@ typora
 upass
 uresourced
 yay-bin
-zigmod-bin
