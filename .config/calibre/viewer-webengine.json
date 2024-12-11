@@ -1,50 +1,50 @@
 {
   "geometry-of-main_window_geometry": {
     "frame_geometry": {
-      "height": 1032,
-      "width": 954,
-      "x": 4,
-      "y": 24
+      "height": 1164,
+      "width": 950,
+      "x": 1920,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1028,
+      "height": 1164,
       "width": 950,
-      "x": 6,
-      "y": 26
+      "x": 1920,
+      "y": 0
     },
-    "maximized": false,
+    "maximized": true,
     "normal_geometry": {
-      "height": 1028,
-      "width": 950,
-      "x": 6,
-      "y": 26
+      "height": 1176,
+      "width": 960,
+      "x": 0,
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAEAAAAGAAAA70AAAQfAAAABgAAABoAAAO7AAAEHQAAAAAAAAAAB4AAAAAGAAAAGgAAA7sAAAQd"
+      "__value__": "AdnQywADAAAAAAeAAAAAAAAACzUAAASLAAAAAAAAAAAAAAO/AAAElwAAAAECAAAAB4AAAAeAAAAAAAAACzUAAASL"
     },
     "screen": {
-      "depth": 24,
+      "depth": 32,
       "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920,
-        "x": 0,
+        "x": 1920,
         "y": 0
       },
-      "index_in_screens_list": 0,
-      "manufacturer": "AU Optronics",
-      "model": "",
-      "name": "eDP",
+      "index_in_screens_list": 1,
+      "manufacturer": "Lenovo Group Limited",
+      "model": "LEN L220xwC",
+      "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 1080,
-        "width": 1920,
+        "height": 1200,
+        "width": 3840,
         "x": 0,
         "y": 0
       }
@@ -56,7 +56,7 @@
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACEAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANIA////AAADtgAABAQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACDAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANcA////AAADtgAABIwAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
@@ -69,6 +69,15 @@
       "singleinstance": false
     },
     "standalone_recently_opened": [
+      {
+        "authors": [
+          "C. G. Jung"
+        ],
+        "key": "/home/morga/Downloads/pg66041-images (1).mobi",
+        "pathtoebook": "/home/morga/Downloads/pg66041-images (1).mobi",
+        "timestamp": "2024-11-27T11:11:15.416Z",
+        "title": "The Theory of Psychoanalysis"
+      },
       {
         "key": "/home/morga/Books/Calibre/Unknown/2310.16836 (56)/2310.16836 - Unknown.mobi",
         "pathtoebook": "/home/morga/Books/Calibre/Unknown/2310.16836 (56)/2310.16836 - Unknown.mobi",

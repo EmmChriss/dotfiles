@@ -3,7 +3,7 @@ theme = "onedark"
 [editor]
 mouse = false
 color-modes = true
-rulers = [80, 120, 160]
+rulers = [80, 100, 120, 160]
 bufferline = "multiple"
 
 [editor.file-picker]
